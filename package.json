@@ -1,0 +1,40 @@
+{
+  "name": "seedlang-artikel",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "oxlint src",
+    "check": "tsc -b && oxlint src && vite build",
+    "preview": "vite preview",
+    "data:fetch": "bash scripts/fetch_sources.sh",
+    "data:nouns": "python3 -I scripts/build_nouns.py data-raw/nouns.jsonl data-raw/freq.txt data-raw/leipzig/deu_mixed-typical_2011_1M/deu_mixed-typical_2011_1M-sentences.txt public/data/nouns.json --limit 12000",
+    "data:verbs": "python3 -I scripts/build_verbs.py data-raw/verbs.jsonl public/data/nouns.json public/data/verbs.json data-raw/goethe data-raw/nouns.jsonl",
+    "data:phrases": "python3 -I scripts/build_phrases.py data-raw/leipzig/deu_mixed-typical_2011_1M/deu_mixed-typical_2011_1M-sentences.txt public/data/phrases.json"
+  },
+  "dependencies": {
+    "@fontsource-variable/nunito": "^5.3.0",
+    "canvas-confetti": "^1.9.4",
+    "lucide-react": "^1.70.0",
+    "motion": "^14.10.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "ts-fsrs": "^6.0.0",
+    "zustand": "^5.1.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.5",
+    "@types/canvas-confetti": "^1.9.0",
+    "@types/node": "^24.19.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "oxlint": "^1.90.0",
+    "tailwindcss": "^4.3.5",
+    "typescript": "~7.0.2",
+    "vite": "^8.3.6",
+    "vite-plugin-pwa": "^2.0.0"
+  }
+}

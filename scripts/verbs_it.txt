@@ -1,0 +1,226 @@
+# IT-consulting verbs for Seedlang · Verben
+# level | infinitive | english | situation | government | noun | example DE (forms of THIS verb in [brackets]) | example EN | when to use it
+# situations: kickoff daily mail meeting workshop dev ops project client
+# Conjugations are NOT written here: they come from Wiktionary (see build_verbs.py).
+
+A1 | sein | to be | kickoff | Nom | | Ich [bin] neu im Team und für das Backend zuständig. | I'm new to the team and responsible for the backend. | Introduce yourself in a kick-off: „Ich bin … und für … zuständig.“
+A1 | heißen | to be called | kickoff | Nom | | Hallo, ich [heiße] Lena und arbeite im Data-Team. | Hi, my name is Lena and I work in the data team. | First round of introductions. With clients, add your role and company.
+A1 | haben | to have | meeting | Akk | | Ich [habe] um 14 Uhr einen Termin mit dem Kunden. | I have a meeting with the client at 2 pm. | Talking about your calendar: „Ich habe einen Termin / keine Zeit.“
+A1 | arbeiten | to work | daily | an + Dat | Arbeit | Ich [arbeite] heute an der API-Anbindung. | Today I'm working on the API integration. | The classic daily update: „Ich arbeite an …“ (an + Dativ).
+A1 | machen | to do, to make | daily | Akk | | Heute [mache] ich die Code-Reviews. | Today I'm doing the code reviews. | All-purpose verb in team chat. In client documents prefer a precise verb.
+A1 | brauchen | to need | daily | Akk | | Ich [brauche] noch Zugriff auf das Repository. | I still need access to the repository. | Naming a blocker in the daily. Formal alternative: benötigen.
+A1 | fragen | to ask | daily | Akk / nach + Dat | Frage | Ich [frage] kurz den Product Owner. | I'll quickly ask the product owner. | „jemanden fragen“ takes the accusative: den Kunden fragen.
+A1 | antworten | to answer | mail | Dat / auf + Akk | Antwort | Ich [antworte] Ihnen spätestens morgen. | I'll reply to you by tomorrow at the latest. | Person in the dative (Ihnen), the message with „auf“: auf die E-Mail antworten.
+A1 | sagen | to say, to tell | meeting | Dat + Akk | | [Sagen] Sie mir bitte Bescheid, wenn der Test fertig ist. | Please let me know when the test is done. | „Bescheid sagen“ = to let someone know. Very common in every team.
+A1 | verstehen | to understand | meeting | Akk | Verständnis | Entschuldigung, das [verstehe] ich nicht ganz. | Sorry, I don't quite understand that. | Polite way to stop a fast speaker in a call, then ask them to repeat.
+A1 | wissen | to know (a fact) | daily | Akk | | Ich [weiß] noch nicht, wie lange das dauert. | I don't know yet how long that will take. | For facts. For people and tools use „kennen“.
+A1 | kennen | to know, be familiar with | kickoff | Akk | | [Kennen] Sie schon unser Ticketsystem? | Do you already know our ticket system? | For people, tools and places: „Kennen Sie Jira?“
+A1 | können | can, to be able to | daily | | | [Kannst] du mir kurz bei dem Merge-Konflikt helfen? | Can you quickly help me with the merge conflict? | Asking colleagues for help. Use „Können Sie …?“ with clients.
+A1 | müssen | must, to have to | project | | | Wir [müssen] das Release bis Freitag abschließen. | We have to finish the release by Friday. | Deadlines and obligations. „nicht müssen“ = don't have to.
+A1 | wollen | to want | client | | | Der Kunde [will] eine mobile App für den Außendienst. | The client wants a mobile app for the field team. | Describing what someone wants. Ask politely with „möchten“ instead.
+A1 | möchten | would like | client | Akk | | Ich [möchte] Ihnen kurz unser Team vorstellen. | I'd like to briefly introduce our team to you. | The polite form of „wollen“: default with clients.
+A1 | sollen | should, to be supposed to | project | | | Wer [soll] das Ticket übernehmen? | Who should take the ticket? | Assigning tasks and passing on instructions.
+A1 | dürfen | may, to be allowed to | ops | | | Wir [dürfen] am Freitag nicht deployen. | We're not allowed to deploy on Friday. | Rules and permissions: change freeze, data protection, access rights.
+A1 | kommen | to come | meeting | | | Ich [komme] fünf Minuten später zum Meeting. | I'll join the meeting five minutes late. | Giving notice that you are late. Perfekt with „sein“.
+A1 | gehen | to go; to work (colloquial) | ops | | | Der Login [geht] wieder. | The login works again. | Colloquial „es geht“ = it works. In reports write „funktioniert“.
+A1 | beginnen | to begin | meeting | mit + Dat | Beginn | Das Daily [beginnt] jeden Tag um 9:30 Uhr. | The daily starts at 9:30 every day. | Meeting times. Slightly more formal than „anfangen“.
+A1 | anfangen | to start | daily | mit + Dat | Anfang | Morgen [fange] ich mit dem neuen Feature [an]. | Tomorrow I'll start on the new feature. | Separable: the prefix „an“ goes to the end of the sentence.
+A1 | schreiben | to write | mail | Dat + Akk | | Ich [schreibe] Ihnen gleich eine kurze Zusammenfassung. | I'll write you a short summary right away. | After calls: promise a written follow-up.
+A1 | lesen | to read | mail | Akk | | Hast du meine Nachricht in Teams schon [gelesen]? | Have you read my message in Teams yet? | Checking that someone saw your message.
+A1 | schicken | to send | mail | Dat + Akk | | Können Sie mir bitte die Logdatei [schicken]? | Could you please send me the log file? | The standard verb for sending files and emails.
+A1 | öffnen | to open | dev | Akk | | [Öffnen] Sie bitte die Datei im Browser. | Please open the file in the browser. | Giving instructions in support calls (Sie-imperative).
+A1 | schließen | to close | dev | Akk | | Ich [schließe] das Ticket, wenn der Kunde zustimmt. | I'll close the ticket once the client agrees. | Closing tickets, windows, issues. Also „einen Vertrag schließen“.
+A1 | finden | to find | dev | Akk | | Ich [finde] den Fehler im Code nicht. | I can't find the bug in the code. | Also for opinions: „Ich finde die Lösung gut.“
+A1 | suchen | to look for | dev | Akk / nach + Dat | Suche | Wir [suchen] noch eine Lösung für das Performance-Problem. | We're still looking for a solution to the performance problem. | „eine Lösung suchen“ is a fixed collocation.
+A1 | helfen | to help | daily | Dat / bei + Dat | Hilfe | Kann ich dir beim Testen [helfen]? | Can I help you with the testing? | Takes the dative: „Ich helfe dir / Ihnen“.
+A1 | zeigen | to show | meeting | Dat + Akk | | Ich [zeige] Ihnen kurz die neue Funktion. | I'll quickly show you the new feature. | Demos and screen sharing: „Ich zeige Ihnen …“.
+A1 | geben | to give | mail | Dat + Akk | | [Geben] Sie mir bitte bis Mittwoch Feedback. | Please give me feedback by Wednesday. | „Feedback geben“, „Bescheid geben“: very common.
+A1 | nehmen | to take | daily | Akk | | Ich [nehme] das Ticket mit der hohen Priorität. | I'll take the high-priority ticket. | Picking up work in sprint planning or the daily.
+A1 | lernen | to learn | kickoff | Akk | | Ich [lerne] gerade Kubernetes. | I'm currently learning Kubernetes. | Talking about your skills and training.
+A1 | testen | to test | dev | Akk | Test | Ich [teste] die Änderung zuerst lokal. | I'll test the change locally first. | Used exactly like the English word.
+A1 | funktionieren | to work, to function | ops | | Funktion | Der Export [funktioniert] seit dem Update nicht mehr. | The export hasn't worked since the update. | The neutral word for bug reports and support tickets.
+A1 | warten | to wait | ops | auf + Akk | | Wir [warten] noch auf die Freigabe vom Kunden. | We're still waiting for the client's approval. | Always „warten auf + Akk“: auf die Antwort warten.
+A1 | sprechen | to speak, to talk | meeting | mit + Dat / über + Akk | | Ich [spreche] morgen mit dem Kunden über das Budget. | Tomorrow I'll talk to the client about the budget. | mit + person (Dativ), über + topic (Akkusativ).
+A1 | telefonieren | to be on the phone | meeting | mit + Dat | | Ich [telefoniere] kurz mit dem Support. | I'll quickly call the support team. | Being on a call. To call someone: „anrufen“.
+A1 | wohnen | to live (reside) | kickoff | in + Dat | Wohnung | Ich [wohne] in Köln und arbeite meistens remote. | I live in Cologne and mostly work remotely. | Small talk in kick-offs and team events.
+A1 | kosten | to cost | project | Akk | | Die Lizenz [kostet] 500 Euro im Monat. | The licence costs 500 euros a month. | Prices, licences, budgets.
+A1 | dauern | to take (time), to last | project | | Dauer | Wie lange [dauert] die Migration ungefähr? | Roughly how long will the migration take? | Estimating time: „Das dauert zwei Tage.“
+A1 | sehen | to see | dev | Akk | | Ich [sehe] den Fehler im Log. | I can see the error in the log. | Also in calls: „Sehen Sie meinen Bildschirm?“
+A1 | hören | to hear | meeting | Akk | | [Hören] Sie mich? Ich glaube, mein Mikro war aus. | Can you hear me? I think my mic was off. | The first sentence of half of all video calls.
+A1 | klicken | to click | dev | auf + Akk | Klick | [Klicken] Sie oben rechts auf „Speichern“. | Click "Save" in the top right. | Support instructions: always „auf + Akk“.
+A1 | speichern | to save | dev | Akk | | Hast du die Änderungen [gespeichert]? | Did you save the changes? | Files and data. Data storage = „die Speicherung“.
+A1 | löschen | to delete | dev | Akk | | Bitte [löschen] Sie die alte Version noch nicht. | Please don't delete the old version yet. | Data, files, branches, accounts.
+A1 | bleiben | to stay | meeting | | | Bitte [bleiben] Sie kurz in der Leitung. | Please stay on the line for a moment. | Phone and video calls. Perfekt with „sein“.
+
+A2 | anrufen | to call (phone) | meeting | Akk | Anruf | Ich [rufe] Sie nach dem Meeting [an]. | I'll call you after the meeting. | Separable, takes the accusative: „Ich rufe Sie an“.
+A2 | besprechen | to discuss | meeting | Akk / mit + Dat | Besprechung | Lass uns das morgen im Daily [besprechen]. | Let's discuss that tomorrow in the daily. | Transitive, no „über“: „etwas besprechen“.
+A2 | erklären | to explain | client | Dat + Akk | Erklärung | Können Sie mir den Freigabeprozess noch einmal [erklären]? | Could you explain the approval process to me again? | Asking a client to walk you through their process.
+A2 | vorbereiten | to prepare | meeting | Akk | Vorbereitung | Ich [bereite] die Präsentation für morgen [vor]. | I'm preparing the presentation for tomorrow. | Separable. Also reflexive: „sich auf ein Meeting vorbereiten“.
+A2 | planen | to plan | project | Akk | Planung | Wir [planen] den nächsten Sprint am Montag. | We'll plan the next sprint on Monday. | Sprint planning, roadmaps, capacity.
+A2 | organisieren | to organise | meeting | Akk | Organisation | Wer [organisiert] den Workshop mit der Fachabteilung? | Who is organising the workshop with the business department? | Events, meetings, logistics. Perfekt without „ge-“.
+A2 | verschieben | to postpone, to move | meeting | Akk / auf + Akk | Verschiebung | Können wir den Termin auf Donnerstag [verschieben]? | Can we move the meeting to Thursday? | Moving meetings and deadlines: „auf + new date“.
+A2 | absagen | to cancel | meeting | Akk | Absage | Leider muss ich das Meeting heute [absagen]. | Unfortunately I have to cancel today's meeting. | Cancelling appointments politely. Opposite: zusagen.
+A2 | zusagen | to accept, to confirm attendance | mail | Dat / Akk | Zusage | Ich [sage] für den Workshop am Freitag [zu]. | I'm confirming my attendance for Friday's workshop. | Replying to invitations. Separable.
+A2 | teilnehmen | to take part | meeting | an + Dat | Teilnahme | Ich [nehme] am Sprint-Review [teil]. | I'll take part in the sprint review. | Always „an + Dativ“: an dem (am) Meeting teilnehmen.
+A2 | einladen | to invite | mail | Akk / zu + Dat | Einladung | Ich [lade] Sie zur Demo am Dienstag [ein]. | I'm inviting you to the demo on Tuesday. | Meeting invitations: „zu + Dativ“.
+A2 | erreichen | to reach | mail | Akk | | Ich [erreiche] Herrn Weber telefonisch nicht. | I can't reach Mr Weber by phone. | Contacting people. Also goals: „ein Ziel erreichen“.
+A2 | sich melden | to get in touch | mail | bei + Dat | Meldung | Ich [melde] mich morgen bei Ihnen. | I'll get back to you tomorrow. | Closing calls and emails: „Ich melde mich bei Ihnen.“
+A2 | sich erinnern | to remember | daily | an + Akk | Erinnerung | [Erinnerst] du dich an den Bug aus dem letzten Sprint? | Do you remember the bug from the last sprint? | Reflexive + „an + Akk“.
+A2 | vergessen | to forget | daily | Akk | | Ich habe mein VPN-Passwort [vergessen]. | I've forgotten my VPN password. | Classic support request.
+A2 | bekommen | to get, to receive | mail | Akk | | Haben Sie meine E-Mail von gestern [bekommen]? | Did you get my email from yesterday? | False friend: „bekommen“ = receive, never become!
+A2 | nutzen | to use | dev | Akk | Nutzung | Wir [nutzen] GitLab für CI/CD. | We use GitLab for CI/CD. | Tools and platforms. Slightly more formal than „benutzen“.
+A2 | benutzen | to use | dev | Akk | | Welche Java-Version [benutzt] ihr im Projekt? | Which Java version do you use in the project? | Everyday team language.
+A2 | installieren | to install | ops | Akk | Installation | Ich [installiere] das Update heute Abend. | I'll install the update tonight. | Perfekt without „ge-“: hat installiert.
+A2 | einrichten | to set up | ops | Akk | Einrichtung | Ich [richte] dir den VPN-Zugang [ein]. | I'll set up your VPN access. | Accounts, environments, workstations for new colleagues.
+A2 | ändern | to change | dev | Akk | Änderung | Wir müssen die Datenbankstruktur [ändern]. | We have to change the database structure. | Change requests: „die Änderung“ is everywhere in IT.
+A2 | prüfen | to check | dev | Akk | Prüfung | Kannst du bitte meinen Pull Request [prüfen]? | Can you please check my pull request? | Reviews and verification. Also „überprüfen“.
+A2 | aktualisieren | to update | ops | Akk | Aktualisierung | Bitte [aktualisieren] Sie die Seite. | Please refresh the page. | Updating software, data or a browser page.
+A2 | herunterladen | to download | dev | Akk | | Sie können die Dokumentation hier [herunterladen]. | You can download the documentation here. | Separable: „Ich lade die Datei herunter.“
+A2 | hochladen | to upload | dev | Akk | | Ich habe die Dateien auf SharePoint [hochgeladen]. | I've uploaded the files to SharePoint. | Separable: „Ich lade die Datei hoch.“
+A2 | sich anmelden | to log in, to sign up | dev | bei + Dat / für + Akk | Anmeldung | Ich kann mich nicht im Portal [anmelden]. | I can't log in to the portal. | Logins and registrations: „sich für einen Workshop anmelden“.
+A2 | kopieren | to copy | dev | Akk | | [Kopieren] Sie den Link in den Browser. | Copy the link into the browser. | Support instructions.
+A2 | versuchen | to try | ops | Akk | Versuch | Ich [versuche] es nach dem Neustart noch einmal. | I'll try again after the restart. | „Versuchen Sie es bitte noch einmal.“
+A2 | entscheiden | to decide | project | über + Akk | Entscheidung | Der Kunde [entscheidet] nächste Woche über das Angebot. | The client will decide on the offer next week. | Decisions and sign-offs: „über + Akk“.
+A2 | bestätigen | to confirm | mail | Akk | Bestätigung | Können Sie den Termin bitte kurz [bestätigen]? | Could you briefly confirm the appointment? | Confirming dates, orders, receipt of emails.
+A2 | buchen | to book | meeting | Akk | Buchung | Ich [buche] einen Raum für den Workshop. | I'll book a room for the workshop. | Rooms, travel, hotel for on-site work at the client.
+A2 | reparieren | to repair | ops | Akk | Reparatur | Wir [reparieren] heute das kaputte Build-Skript. | Today we're fixing the broken build script. | Hardware and things. For software bugs „beheben“ is more precise.
+A2 | starten | to start | ops | Akk | Start | Ich [starte] den Build noch einmal. | I'll start the build again. | Builds, jobs, projects. Restart = „neu starten“.
+A2 | abstürzen | to crash | ops | | Absturz | Die App [stürzt] beim Login [ab]. | The app crashes on login. | Bug reports. Perfekt with „sein“: Die App ist abgestürzt.
+A2 | hängen | to hang, to freeze | ops | | | Das Programm [hängt] schon wieder. | The program is freezing again. | Colloquial for a frozen application.
+A2 | schaffen | to manage (to do) | project | Akk | | [Schaffen] wir das bis Freitag? | Can we get it done by Friday? | Checking feasibility: „Das schaffen wir.“
+A2 | weiterleiten | to forward | mail | Akk / an + Akk | Weiterleitung | Ich [leite] Ihre Anfrage an den Support [weiter]. | I'll forward your request to support. | Emails and tickets: „an + Akk“.
+A2 | beantworten | to answer (something) | mail | Akk | Beantwortung | Ich [beantworte] Ihre Fragen gern im nächsten Call. | I'm happy to answer your questions in the next call. | Transitive, no preposition: „eine Frage beantworten“.
+A2 | verbessern | to improve | dev | Akk | Verbesserung | Wir wollen die Ladezeit der Startseite [verbessern]. | We want to improve the loading time of the home page. | Performance, quality, processes.
+A2 | schätzen | to estimate | project | Akk | Schätzung | Wie viele Story Points [schätzt] ihr für das Ticket? | How many story points do you estimate for the ticket? | Planning poker. Also „schätzen“ = to appreciate.
+A2 | aufschreiben | to write down | meeting | Akk | | Ich [schreibe] die Action Items [auf]. | I'll write down the action items. | Taking notes in meetings.
+A2 | erledigen | to get done | daily | Akk | Erledigung | Ich [erledige] das heute noch. | I'll get that done today. | Promising to finish a task: „Ist erledigt!“
+A2 | vorstellen | to introduce, to present | kickoff | Dat + Akk | Vorstellung | Darf ich Ihnen unser Team [vorstellen]? | May I introduce our team to you? | Kick-offs and pitches. Reflexive „sich vorstellen“ = introduce yourself.
+A2 | sich treffen | to meet | meeting | mit + Dat | Treffen | Wir [treffen] uns um zehn im Teams-Call. | We'll meet at ten in the Teams call. | Reflexive with „uns“.
+A2 | mitteilen | to inform, to let know | mail | Dat + Akk | Mitteilung | Bitte [teilen] Sie uns Ihre Verfügbarkeit [mit]. | Please let us know your availability. | Formal emails. Separable.
+A2 | informieren | to inform | mail | Akk / über + Akk | Information | Ich [informiere] das Team über die Änderung. | I'll inform the team about the change. | „über + Akk“ for the topic.
+A2 | benötigen | to require | workshop | Akk | | Wir [benötigen] Zugriff auf die Testumgebung. | We require access to the test environment. | The formal „brauchen“: emails and documents.
+A2 | liefern | to deliver | project | Akk | Lieferung | Wir [liefern] das erste Inkrement Ende März. | We'll deliver the first increment at the end of March. | Deliverables: „die Lieferung“, „liefern bis …“.
+A2 | abgeben | to hand in | project | Akk | Abgabe | Bis wann müssen wir das Konzept [abgeben]? | When do we have to hand in the concept? | Deadlines for documents and offers.
+A2 | zurückrufen | to call back | meeting | Akk | Rückruf | Ich [rufe] Sie in zehn Minuten [zurück]. | I'll call you back in ten minutes. | Separable, accusative: „Ich rufe Sie zurück.“
+A2 | ausfüllen | to fill in | mail | Akk | | Bitte [füllen] Sie das Formular bis Freitag [aus]. | Please fill in the form by Friday. | Forms and timesheets.
+A2 | unterschreiben | to sign | project | Akk | Unterschrift | Der Kunde hat den Vertrag gestern [unterschrieben]. | The client signed the contract yesterday. | Contracts and NDAs. Inseparable: no „ge-“.
+A2 | deployen | to deploy | ops | Akk | | Wir [deployen] jeden Dienstag auf Produktion. | We deploy to production every Tuesday. | Team slang („Denglisch“). Participle: deployt. In client documents use „bereitstellen“.
+A2 | committen | to commit (code) | dev | Akk | Commit | Hast du deine Änderungen schon [committet]? | Have you committed your changes yet? | Developer slang. Participle without „ge-“: committet.
+A2 | pushen | to push (code) | dev | Akk | | Ich [pushe] den Branch gleich. | I'll push the branch in a moment. | Developer slang. Participle: gepusht.
+
+B1 | entwickeln | to develop | dev | Akk | Entwicklung | Wir [entwickeln] eine Schnittstelle zum SAP-System. | We're developing an interface to the SAP system. | Core verb for software work: „die Entwicklung“, „der Entwickler“.
+B1 | umsetzen | to implement, to put into practice | project | Akk | Umsetzung | Wir [setzen] das Feature bis Ende des Sprints [um]. | We'll implement the feature by the end of the sprint. | The consulting verb. „die Umsetzung“ appears in every project plan.
+B1 | implementieren | to implement (code) | dev | Akk | Implementierung | Ich habe die Validierung im Backend [implementiert]. | I've implemented the validation in the backend. | Technical implementation. „umsetzen“ is broader.
+B1 | berücksichtigen | to take into account | workshop | Akk | Berücksichtigung | Wir [berücksichtigen] Ihre Anforderungen im nächsten Release. | We'll take your requirements into account in the next release. | Showing clients their input matters.
+B1 | sich abstimmen | to coordinate, to align | meeting | mit + Dat | Abstimmung | Ich [stimme] mich kurz mit dem Architekten [ab]. | I'll quickly align with the architect. | Everyday consulting word: „Lass uns kurz abstimmen.“
+B1 | festlegen | to set, to define | project | Akk | Festlegung | Lassen Sie uns den Go-Live-Termin [festlegen]. | Let's set the go-live date. | Fixing dates, scope, responsibilities.
+B1 | definieren | to define | workshop | Akk | Definition | Wir müssen die Akzeptanzkriterien klar [definieren]. | We need to define the acceptance criteria clearly. | Requirements engineering.
+B1 | analysieren | to analyse | workshop | Akk | Analyse | Zuerst [analysieren] wir die bestehenden Prozesse. | First we analyse the existing processes. | Opening phase of every consulting project.
+B1 | bewerten | to assess, to evaluate | client | Akk | Bewertung | Wie [bewerten] Sie die beiden Lösungsansätze? | How do you assess the two approaches? | Asking for the client's opinion; also risk assessment.
+B1 | empfehlen | to recommend | client | Dat + Akk | Empfehlung | Ich [empfehle] Ihnen eine schrittweise Migration. | I recommend a step-by-step migration. | Giving advice: dative for the person.
+B1 | vorschlagen | to suggest | client | Dat + Akk | Vorschlag | Ich [schlage] [vor], dass wir mit einem Pilotprojekt starten. | I suggest that we start with a pilot project. | Proposals in meetings. Softer: „Ich würde vorschlagen …“
+B1 | unterstützen | to support | client | Akk / bei + Dat | Unterstützung | Wir [unterstützen] Sie gern bei der Einführung. | We're happy to support you with the rollout. | Offering help: „bei + Dativ“.
+B1 | beraten | to advise | client | Akk | Beratung | Wir [beraten] den Kunden bei der Cloud-Strategie. | We advise the client on the cloud strategy. | What a consultant (Berater/in) does. Accusative person.
+B1 | koordinieren | to coordinate | project | Akk | Koordination | Wer [koordiniert] die Tests mit dem Fachbereich? | Who is coordinating the tests with the business department? | Project management and cross-team work.
+B1 | klären | to clarify | workshop | Akk | Klärung | Das [klären] wir am besten direkt mit der Fachabteilung. | We'd best clarify that directly with the business department. | Open questions: „Das müssen wir noch klären.“
+B1 | nachfragen | to follow up, to ask again | mail | bei + Dat | Nachfrage | Ich [frage] beim Kunden noch einmal [nach]. | I'll follow up with the client. | Chasing an answer politely.
+B1 | zusammenfassen | to summarise | meeting | Akk | Zusammenfassung | Ich [fasse] die Ergebnisse kurz [zusammen]. | I'll briefly summarise the results. | End of meetings: „Kurz zusammengefasst: …“
+B1 | präsentieren | to present | client | Dat + Akk | Präsentation | Am Freitag [präsentieren] wir dem Vorstand die Roadmap. | On Friday we'll present the roadmap to the board. | Steering committees and demos.
+B1 | überzeugen | to convince | client | Akk / von + Dat | Überzeugung | Die Demo hat den Kunden [überzeugt]. | The demo convinced the client. | Pitches: „jemanden von etwas überzeugen“.
+B1 | vereinbaren | to agree, to arrange | meeting | Akk | Vereinbarung | Wir haben einen wöchentlichen Jour fixe [vereinbart]. | We've arranged a weekly status meeting. | Meetings and agreements: „einen Termin vereinbaren“.
+B1 | einhalten | to meet, to keep (to) | project | Akk | Einhaltung | Wir können die Deadline [einhalten]. | We can meet the deadline. | Deadlines, budgets, SLAs, rules.
+B1 | sich verzögern | to be delayed | project | um + Akk | Verzögerung | Der Go-Live [verzögert] sich um zwei Wochen. | The go-live is delayed by two weeks. | Status reports: „um + Akk“ for the amount of delay.
+B1 | ausfallen | to fail, to go down | ops | | Ausfall | Gestern ist der Mailserver zwei Stunden [ausgefallen]. | Yesterday the mail server was down for two hours. | Outages. Perfekt with „sein“. Noun: der Ausfall.
+B1 | beheben | to fix, to resolve | ops | Akk | Behebung | Wir haben den Fehler mit einem Hotfix [behoben]. | We fixed the bug with a hotfix. | The professional verb for fixing bugs.
+B1 | reproduzieren | to reproduce | dev | Akk | | Ich kann den Bug lokal nicht [reproduzieren]. | I can't reproduce the bug locally. | Bug triage. Perfekt: hat reproduziert.
+B1 | debuggen | to debug | dev | Akk | | Ich [debugge] gerade den Login-Flow. | I'm debugging the login flow right now. | Developer slang. Participle: debuggt.
+B1 | integrieren | to integrate | dev | Akk / in + Akk | Integration | Wir [integrieren] den Zahlungsdienst in den Shop. | We're integrating the payment service into the shop. | „in + Akk“: direction.
+B1 | migrieren | to migrate | ops | Akk / in + Akk | Migration | Wir [migrieren] die Datenbank in die Cloud. | We're migrating the database to the cloud. | Cloud and legacy projects.
+B1 | konfigurieren | to configure | ops | Akk | Konfiguration | Hast du die Firewall schon [konfiguriert]? | Have you configured the firewall yet? | Settings, servers, tools.
+B1 | bereitstellen | to provide, to deploy | ops | Dat + Akk | Bereitstellung | Wir [stellen] Ihnen die Testumgebung bis Montag [bereit]. | We'll provide you with the test environment by Monday. | The formal word for „deployen“: documents and clients.
+B1 | freigeben | to approve, to release | project | Akk | Freigabe | Der Kunde muss das Konzept noch [freigeben]. | The client still has to approve the concept. | Approvals and sign-offs. „die Freigabe“ is a key word.
+B1 | genehmigen | to approve (officially) | project | Akk | Genehmigung | Das Budget wurde gestern [genehmigt]. | The budget was approved yesterday. | Budgets, leave requests, permissions.
+B1 | erfassen | to record, to log | workshop | Akk | Erfassung | Bitte [erfassen] Sie Ihre Stunden bis Freitag im Tool. | Please log your hours in the tool by Friday. | Timesheets, data entry, requirements capture.
+B1 | verwalten | to manage, to administer | ops | Akk | Verwaltung | Wir [verwalten] die Zugänge zentral über Entra ID. | We manage access centrally via Entra ID. | Administration of users, licences, data.
+B1 | überwachen | to monitor | ops | Akk | Überwachung | Grafana [überwacht] die Auslastung der Server. | Grafana monitors the server load. | Monitoring. Inseparable: hat überwacht.
+B1 | sichern | to back up, to secure | ops | Akk | Sicherung | Wir [sichern] die Daten jede Nacht. | We back up the data every night. | Backups: „die Datensicherung“.
+B1 | wiederherstellen | to restore | ops | Akk | Wiederherstellung | Können wir das Backup von gestern [wiederherstellen]? | Can we restore yesterday's backup? | Disaster recovery. Separable: stellt … wieder her.
+B1 | anpassen | to adapt, to customise | dev | Akk / an + Akk | Anpassung | Wir [passen] die Oberfläche an das Corporate Design [an]. | We're adapting the interface to the corporate design. | Customising software: „an + Akk“.
+B1 | erweitern | to extend | dev | Akk / um + Akk | Erweiterung | Wir [erweitern] die API um zwei Endpunkte. | We're extending the API by two endpoints. | „um + Akk“ for what is added.
+B1 | ersetzen | to replace | ops | Akk / durch + Akk | | Das alte System wird durch eine Cloud-Lösung [ersetzt]. | The old system is being replaced by a cloud solution. | Modernisation projects: „durch + Akk“.
+B1 | vermeiden | to avoid | dev | Akk | Vermeidung | So [vermeiden] wir doppelte Datensätze. | That way we avoid duplicate records. | Risks and errors to prevent.
+B1 | verursachen | to cause | ops | Akk | | Das Update hat den Ausfall [verursacht]. | The update caused the outage. | Root-cause analysis and post-mortems.
+B1 | auftreten | to occur | ops | | | Der Fehler [tritt] nur in Safari [auf]. | The error only occurs in Safari. | Bug reports: „Der Fehler tritt auf, wenn …“
+B1 | sich kümmern | to take care of | daily | um + Akk | | Ich [kümmere] mich um das Deployment. | I'll take care of the deployment. | Taking ownership: „Ich kümmere mich darum.“
+B1 | sich beschäftigen | to deal with, to work on | daily | mit + Dat | Beschäftigung | Momentan [beschäftige] ich mich mit Performance-Tests. | At the moment I'm working on performance tests. | Describing your focus in the daily.
+B1 | sich beziehen | to refer to | mail | auf + Akk | Bezug | Ich [beziehe] mich auf Ihre E-Mail vom 3. Mai. | I'm referring to your email of 3 May. | Formal opening line in business emails.
+B1 | abhängen | to depend on | project | von + Dat | | Das [hängt] von der Freigabe der IT-Security [ab]. | That depends on approval from IT security. | Dependencies: „Das hängt davon ab, ob …“
+B1 | bestehen | to consist of | workshop | aus + Dat | | Das System [besteht] aus drei Microservices. | The system consists of three microservices. | Architecture descriptions.
+B1 | sich einigen | to agree on | meeting | auf + Akk | Einigung | Wir haben uns auf eine Lösung [geeinigt]. | We've agreed on a solution. | Outcome of negotiations: „auf + Akk“.
+B1 | teilen | to share | meeting | Akk / mit + Dat | | Kannst du deinen Bildschirm [teilen]? | Can you share your screen? | Video calls and documents.
+B1 | zusammenführen | to merge | dev | Akk | Zusammenführung | Ich [führe] den Branch nach dem Review [zusammen]. | I'll merge the branch after the review. | Formal word for merging. In dev teams you'll mostly hear the slang „mergen“ (hat gemergt).
+B1 | betreuen | to look after, to manage | client | Akk | Betreuung | Ich [betreue] den Kunden seit zwei Jahren. | I've been looking after this client for two years. | Account management.
+B1 | übernehmen | to take over | daily | Akk | Übernahme | Ich [übernehme] das Ticket von Max. | I'll take over the ticket from Max. | Handover of tasks. Inseparable: hat übernommen.
+B1 | erstellen | to create | dev | Akk | Erstellung | Ich [erstelle] ein Ticket in Jira. | I'll create a ticket in Jira. | Tickets, documents, reports, accounts.
+B1 | dokumentieren | to document | dev | Akk | Dokumentation | Bitte [dokumentieren] Sie die Schnittstelle im Wiki. | Please document the interface in the wiki. | „die Dokumentation“ is part of every delivery.
+B1 | verhandeln | to negotiate | client | über + Akk / mit + Dat | Verhandlung | Wir [verhandeln] noch über den Tagessatz. | We're still negotiating the daily rate. | Contracts and rates.
+B1 | anbieten | to offer | client | Dat + Akk | Angebot | Wir [bieten] Ihnen einen kostenlosen Workshop [an]. | We're offering you a free workshop. | Sales and proposals: „das Angebot“.
+B1 | abschließen | to complete, to conclude | project | Akk | Abschluss | Wir haben die Testphase erfolgreich [abgeschlossen]. | We've successfully completed the test phase. | Phases, projects, contracts.
+B1 | durchführen | to carry out | workshop | Akk | Durchführung | Nächste Woche [führen] wir einen Lasttest [durch]. | Next week we'll carry out a load test. | Tests, workshops, interviews, audits.
+B1 | erwarten | to expect | client | Akk / von + Dat | Erwartung | Was [erwarten] Sie von der neuen Lösung? | What do you expect from the new solution? | Expectation management in kick-offs.
+B1 | verbinden | to connect | ops | Akk / mit + Dat | Verbindung | Ich [verbinde] mich per VPN mit dem Kundennetz. | I'm connecting to the client network via VPN. | Networks, calls: „Ich verbinde Sie.“
+
+B2 | gewährleisten | to guarantee, to ensure | client | Akk | Gewährleistung | Wir [gewährleisten] eine Verfügbarkeit von 99,9 Prozent. | We guarantee 99.9 percent availability. | SLAs and contracts. Very formal.
+B2 | sicherstellen | to ensure | project | Akk | Sicherstellung | Bitte [stellen] Sie [sicher], dass alle Tests grün sind. | Please make sure that all tests are green. | Separable: „Ich stelle sicher, dass …“
+B2 | voraussetzen | to presuppose, to require | workshop | Akk | Voraussetzung | Die Lösung [setzt] eine saubere Datenbasis [voraus]. | The solution requires a clean data basis. | Prerequisites: „die Voraussetzung“.
+B2 | eskalieren | to escalate | ops | Akk / an + Akk | Eskalation | Wenn der Bug morgen noch offen ist, [eskalieren] wir ihn. | If the bug is still open tomorrow, we'll escalate it. | Incidents and blocked projects.
+B2 | priorisieren | to prioritise | project | Akk | Priorisierung | Der Product Owner [priorisiert] das Backlog. | The product owner prioritises the backlog. | Agile planning.
+B2 | evaluieren | to evaluate | client | Akk | Evaluierung | Wir [evaluieren] drei Anbieter für das neue CRM. | We're evaluating three vendors for the new CRM. | Tool selection and vendor comparisons.
+B2 | skalieren | to scale | ops | Akk | Skalierung | Die Plattform [skaliert] bei hoher Last automatisch. | The platform scales automatically under high load. | Cloud architecture.
+B2 | optimieren | to optimise | dev | Akk | Optimierung | Wir müssen die Datenbankabfragen [optimieren]. | We need to optimise the database queries. | Performance and processes.
+B2 | automatisieren | to automate | dev | Akk | Automatisierung | Wir [automatisieren] die Tests in der Pipeline. | We're automating the tests in the pipeline. | DevOps and process automation.
+B2 | abbilden | to map, to represent | workshop | Akk / in + Dat | Abbildung | Lässt sich dieser Prozess im System [abbilden]? | Can this process be mapped in the system? | Consulting classic: mapping business processes into software.
+B2 | ableiten | to derive | workshop | Akk / aus + Dat | Ableitung | Aus den Interviews [leiten] wir die Anforderungen [ab]. | From the interviews we derive the requirements. | Analysis: „aus + Dativ“.
+B2 | aufsetzen | to set up | dev | Akk | | Ich [setze] eine neue Testumgebung [auf]. | I'm setting up a new test environment. | Environments, projects, pipelines (colloquial in IT).
+B2 | anstoßen | to initiate, to kick off | project | Akk | Anstoß | Ich [stoße] den Freigabeprozess heute noch [an]. | I'll kick off the approval process today. | Starting processes and discussions.
+B2 | herunterbrechen | to break down | project | Akk / auf + Akk | | Wir [brechen] das Epic in kleinere User Stories [herunter]. | We break the epic down into smaller user stories. | Agile refinement. Separable.
+B2 | ausarbeiten | to work out, to draft | client | Akk | Ausarbeitung | Bis Montag [arbeiten] wir ein Angebot [aus]. | We'll draft an offer by Monday. | Proposals and concepts.
+B2 | erarbeiten | to develop (jointly) | workshop | Akk | Erarbeitung | Im Workshop [erarbeiten] wir gemeinsam die Zielarchitektur. | In the workshop we'll jointly develop the target architecture. | Collaborative results in workshops.
+B2 | abwägen | to weigh up | client | Akk | Abwägung | Wir sollten Kosten und Nutzen sorgfältig [abwägen]. | We should carefully weigh up costs and benefits. | Decision papers.
+B2 | beurteilen | to judge, to assess | client | Akk | Beurteilung | Das kann ich ohne Testdaten nicht [beurteilen]. | I can't judge that without test data. | Careful expert statements.
+B2 | delegieren | to delegate | project | Akk / an + Akk | Delegation | Ich [delegiere] die Code-Reviews an das Senior-Team. | I'm delegating the code reviews to the senior team. | Leadership: „an + Akk“.
+B2 | beauftragen | to commission | client | Akk / mit + Dat | Auftrag | Der Kunde hat uns mit der Migration [beauftragt]. | The client has commissioned us with the migration. | Contracts: „jemanden mit etwas beauftragen“.
+B2 | abrechnen | to bill, to invoice | project | Akk | Abrechnung | Wir [rechnen] nach Aufwand [ab]. | We bill based on time and materials. | Billing models: nach Aufwand / zum Festpreis.
+B2 | kalkulieren | to calculate | project | Akk | Kalkulation | Haben Sie den Aufwand schon [kalkuliert]? | Have you already calculated the effort? | Effort estimates and offers.
+B2 | einbinden | to involve, to integrate | workshop | Akk / in + Akk | Einbindung | Wir sollten die Fachabteilung früh [einbinden]. | We should involve the business department early. | Stakeholder management.
+B2 | hinterfragen | to question, to challenge | workshop | Akk | | Wir [hinterfragen] jeden Prozessschritt kritisch. | We critically question every process step. | Consulting mindset. Inseparable: hat hinterfragt.
+B2 | nachvollziehen | to follow, to understand | dev | Akk | | Anhand der Logs kann ich den Fehler gut [nachvollziehen]. | Using the logs, I can trace the error well. | „Das kann ich nachvollziehen“ = I can see your point.
+B2 | rechtfertigen | to justify | client | Akk | Rechtfertigung | Wie [rechtfertigen] wir die höheren Lizenzkosten? | How do we justify the higher licence costs? | Business cases.
+B2 | beschleunigen | to accelerate | dev | Akk | Beschleunigung | Caching [beschleunigt] die Ladezeiten deutlich. | Caching speeds up loading times considerably. | Performance and processes.
+B2 | entgegenwirken | to counteract | project | Dat | | Mit mehr Tests [wirken] wir dem Qualitätsproblem [entgegen]. | With more tests we counteract the quality problem. | Risk mitigation: takes the dative.
+B2 | sich auswirken | to have an effect on | project | auf + Akk | Auswirkung | Die Verzögerung [wirkt] sich auf das Budget [aus]. | The delay affects the budget. | Impact analysis: „die Auswirkung auf …“
+B2 | zurückgreifen | to fall back on, to use | dev | auf + Akk | | Wir können auf bestehende Komponenten [zurückgreifen]. | We can fall back on existing components. | Reuse: „auf + Akk“.
+B2 | beitragen | to contribute | project | zu + Dat | Beitrag | Jedes Teammitglied [trägt] zum Erfolg des Projekts [bei]. | Every team member contributes to the project's success. | „zu + Dativ“.
+B2 | sich ergeben | to result, to emerge | workshop | aus + Dat | | Aus der Analyse [ergeben] sich drei Handlungsfelder. | Three areas for action emerge from the analysis. | Results of analyses.
+B2 | erfüllen | to fulfil, to meet | workshop | Akk | Erfüllung | Die Lösung [erfüllt] alle Sicherheitsanforderungen. | The solution meets all security requirements. | Requirements and criteria.
+B2 | überschreiten | to exceed | project | Akk | Überschreitung | Wir dürfen das Budget nicht [überschreiten]. | We must not exceed the budget. | Budgets and deadlines. Inseparable.
+B2 | einschränken | to restrict | ops | Akk | Einschränkung | Wir [schränken] die Zugriffsrechte auf das Nötigste [ein]. | We restrict access rights to the bare minimum. | Security and scope.
+B2 | auslagern | to outsource | client | Akk / an + Akk | Auslagerung | Viele Unternehmen [lagern] den IT-Betrieb [aus]. | Many companies outsource their IT operations. | Sourcing strategy.
+B2 | übergeben | to hand over | project | Dat + Akk / an + Akk | Übergabe | Nach dem Go-Live [übergeben] wir das System an den Betrieb. | After go-live we hand the system over to operations. | Project handover. Inseparable: hat übergeben.
+B2 | einarbeiten | to onboard, to train | kickoff | Akk / in + Akk | Einarbeitung | Ich [arbeite] die neue Kollegin in das Projekt [ein]. | I'm onboarding the new colleague onto the project. | Onboarding: „die Einarbeitung“.
+B2 | verlängern | to extend | client | Akk / um + Akk | Verlängerung | Der Kunde möchte den Vertrag um ein Jahr [verlängern]. | The client wants to extend the contract by one year. | Contracts and licences: „um + Akk“.
+B2 | vorantreiben | to drive forward | project | Akk | | Wir müssen die Digitalisierung [vorantreiben]. | We need to drive the digitalisation forward. | Management language.
+B2 | ausrichten | to align | client | Akk / auf + Akk | Ausrichtung | Wir [richten] die IT-Strategie auf die Geschäftsziele [aus]. | We align the IT strategy with the business goals. | Strategy consulting: „auf + Akk“.
+B2 | bündeln | to bundle | project | Akk | Bündelung | Wir [bündeln] alle Anfragen in einem Ticket. | We bundle all requests into one ticket. | Efficiency and organisation.
+B2 | absichern | to secure, to safeguard | ops | Akk / gegen + Akk | Absicherung | Wir [sichern] die API mit OAuth 2.0 [ab]. | We secure the API with OAuth 2.0. | Security and risk.
+B2 | freischalten | to activate, to unlock | ops | Akk / für + Akk | Freischaltung | Ich [schalte] Ihren Zugang heute noch [frei]. | I'll activate your access today. | Accounts, licences, features.
+B2 | protokollieren | to log, to record | ops | Akk | Protokollierung | Das System [protokolliert] alle Zugriffe. | The system logs every access. | Logging and audit trails.
+B2 | überarbeiten | to revise, to rework | client | Akk | Überarbeitung | Wir [überarbeiten] das Konzept bis Freitag. | We'll revise the concept by Friday. | Responding to client feedback. Inseparable: hat überarbeitet.
+B2 | verantworten | to be responsible for | project | Akk | Verantwortung | Wer [verantwortet] das Testmanagement? | Who is responsible for test management? | Roles and accountability: „die Verantwortung“.
+B2 | abgleichen | to reconcile, to compare | ops | Akk / mit + Dat | Abgleich | Wir [gleichen] die Daten mit dem Altsystem [ab]. | We reconcile the data with the legacy system. | Data migration and integration: „der Datenabgleich“.
+B2 | festhalten | to record, to note down | meeting | Akk | | Ich [halte] die Ergebnisse im Protokoll [fest]. | I'll record the results in the minutes. | Meeting minutes: „Halten wir fest: …“
+B2 | umgehen | to deal with, to handle | client | mit + Dat | Umgang | Wie [gehen] wir mit kurzfristigen Change Requests [um]? | How do we handle short-notice change requests? | Separable here: geht … um. „mit + Dat“.
+B2 | ansprechen | to raise, to address | meeting | Akk | | Das Risiko sollten wir im Steering Committee [ansprechen]. | We should raise the risk in the steering committee. | Raising topics diplomatically.
+B2 | darstellen | to show, to depict | client | Akk | Darstellung | Die Grafik [stellt] die Systemlandschaft [dar]. | The diagram shows the system landscape. | Presentations: „die Darstellung“.
+B2 | erläutern | to explain (in detail) | client | Dat + Akk | Erläuterung | Ich [erläutere] Ihnen kurz unser Vorgehen. | I'll briefly explain our approach to you. | Formal „erklären“: presentations and documents.
+B2 | gestalten | to design, to shape | workshop | Akk | Gestaltung | Wir [gestalten] die Oberfläche gemeinsam mit den Anwendern. | We design the interface together with the users. | UX and change management.

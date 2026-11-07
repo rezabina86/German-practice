@@ -1,0 +1,190 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg: #ffffff;
+  --bg-soft: #f6f6f8;
+  --surface: #ffffff;
+  --surface-2: #f3f3f6;
+  --border: #e5e5ea;
+  --border-strong: #d6d6de;
+  --text: #2f3137;
+  --text-muted: #8a8d96;
+
+  --brand: #7048e8;
+  --brand-shadow: #5531c4;
+  --brand-soft: #efeafe;
+  --brand-text: #5a36d6;
+
+  --der: #1c8fef;
+  --der-shadow: #1170c4;
+  --der-soft: #e3f2fe;
+  --die: #f0437a;
+  --die-shadow: #c82a5d;
+  --die-soft: #fee7ef;
+  --das: #1fb866;
+  --das-shadow: #14904d;
+  --das-soft: #e2f7ec;
+
+  --ok: #22b865;
+  --ok-shadow: #179250;
+  --ok-soft: #e1f8e9;
+  --ok-text: #12803f;
+  --bad: #f04b3c;
+  --bad-shadow: #c2321f;
+  --bad-soft: #ffe6e3;
+  --bad-text: #c4301f;
+
+  --gold: #ffc107;
+  --gold-shadow: #e0a100;
+  --flame: #ff9600;
+  --locked: #e5e5ea;
+  --locked-shadow: #c9c9d1;
+}
+
+.dark {
+  --bg: #111318;
+  --bg-soft: #161920;
+  --surface: #1b1f27;
+  --surface-2: #232833;
+  --border: #2b313c;
+  --border-strong: #3a4250;
+  --text: #eceef2;
+  --text-muted: #9aa2ae;
+
+  --brand: #8466ff;
+  --brand-shadow: #5d3fd6;
+  --brand-soft: #2a2348;
+  --brand-text: #b3a1ff;
+
+  --der-soft: #142c42;
+  --die-soft: #3e1a29;
+  --das-soft: #12351f;
+
+  --ok-soft: #14301f;
+  --ok-text: #5fe39a;
+  --bad-soft: #3a1a17;
+  --bad-text: #ff8a7d;
+
+  --locked: #2b313c;
+  --locked-shadow: #1f242c;
+}
+
+@theme inline {
+  --font-sans: 'Nunito Variable', ui-rounded, system-ui, sans-serif;
+  --color-bg: var(--bg);
+  --color-bg-soft: var(--bg-soft);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--border);
+  --color-line-strong: var(--border-strong);
+  --color-ink: var(--text);
+  --color-muted: var(--text-muted);
+  --color-brand: var(--brand);
+  --color-brand-shadow: var(--brand-shadow);
+  --color-brand-soft: var(--brand-soft);
+  --color-brand-text: var(--brand-text);
+  --color-der: var(--der);
+  --color-der-shadow: var(--der-shadow);
+  --color-der-soft: var(--der-soft);
+  --color-die: var(--die);
+  --color-die-shadow: var(--die-shadow);
+  --color-die-soft: var(--die-soft);
+  --color-das: var(--das);
+  --color-das-shadow: var(--das-shadow);
+  --color-das-soft: var(--das-soft);
+  --color-ok: var(--ok);
+  --color-ok-shadow: var(--ok-shadow);
+  --color-ok-soft: var(--ok-soft);
+  --color-ok-text: var(--ok-text);
+  --color-bad: var(--bad);
+  --color-bad-shadow: var(--bad-shadow);
+  --color-bad-soft: var(--bad-soft);
+  --color-bad-text: var(--bad-text);
+  --color-gold: var(--gold);
+  --color-gold-shadow: var(--gold-shadow);
+  --color-flame: var(--flame);
+  --color-locked: var(--locked);
+  --color-locked-shadow: var(--locked-shadow);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: none;
+}
+
+@layer base {
+  button {
+    cursor: pointer;
+    font-family: inherit;
+  }
+
+  button:disabled {
+    cursor: default;
+  }
+}
+
+:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--brand) 60%, transparent);
+  outline-offset: 2px;
+}
+
+/* Tactile 3D press: a solid bottom "shadow" that collapses on press. */
+.btn3d {
+  --press: 4px;
+  position: relative;
+  border-radius: 16px;
+  border-bottom-width: var(--press);
+  transition: transform 80ms ease, border-bottom-width 80ms ease, filter 120ms ease, background-color 120ms;
+  user-select: none;
+}
+.btn3d:not(:disabled):hover {
+  filter: brightness(1.04);
+}
+.btn3d:not(:disabled):active,
+.btn3d[data-pressed='true'] {
+  transform: translateY(calc(var(--press) - 1px));
+  border-bottom-width: 1px;
+}
+
+.unit-block {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 760px;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  scrollbar-width: none;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

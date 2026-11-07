@@ -1,0 +1,158 @@
+# Consulting phrases (Redemittel) for Seedlang · Phrasen
+# level | situation | function | register | German | English | scenario (when you'd say it) | note
+# situations: kickoff daily mail meeting workshop dev ops project client
+# functions:  greet small clarify status agree disagree propose request schedule problem close email
+# register:   formal (Sie, clients) · neutral (works everywhere) · informal (du, team chat)
+
+A1 | kickoff | greet | neutral | Guten Morgen zusammen! | Good morning, everyone! | You join the morning call and greet the whole team. | „zusammen“ = everyone. Works with du and Sie groups.
+A1 | kickoff | greet | formal | Darf ich mich kurz vorstellen? | May I briefly introduce myself? | You stand up at a client kick-off to introduce yourself. | Polite opener before your name and role.
+A1 | kickoff | greet | neutral | Ich bin Entwickler und arbeite im Backend-Team. | I'm a developer and work in the backend team. | Someone at the kick-off asks what your role is. | Women say „Entwicklerin“. Add your team or topic.
+A1 | kickoff | greet | formal | Freut mich, Sie kennenzulernen. | Nice to meet you. | You shake hands with the client's project sponsor for the first time. | Formal. With colleagues a short „Freut mich!“ is enough.
+A1 | kickoff | greet | informal | Schön, dass du dabei bist! | Great that you're on board! | A new colleague joins your team today. | Warm welcome in teams that use du.
+A1 | meeting | clarify | formal | Können Sie das bitte wiederholen? | Could you repeat that, please? | The client speaks too fast on a call and you missed a key point. | Simple and polite. Even softer: „Könnten Sie …“
+A1 | meeting | clarify | formal | Können Sie bitte etwas langsamer sprechen? | Could you speak a bit more slowly, please? | Your German can't keep up with a fast speaker in a meeting. | Nobody minds this request, so use it.
+A1 | meeting | clarify | neutral | Was bedeutet das genau? | What exactly does that mean? | Someone uses an internal abbreviation you don't know. | Neutral: fine with clients and colleagues.
+A1 | meeting | clarify | neutral | Wie schreibt man das? | How do you spell that? | You need to note down the name of a server or product. | Useful for names, systems and email addresses.
+A1 | meeting | request | formal | Hören Sie mich? | Can you hear me? | A video call starts and you're not sure your microphone works. | With colleagues: „Hörst du mich?“
+A1 | meeting | status | neutral | Ich teile kurz meinen Bildschirm. | I'll quickly share my screen. | You want to show something during a call. | Announce it before you share.
+A1 | meeting | status | neutral | Ich bin gleich wieder da. | I'll be right back. | You have to leave the call for a minute. | Short version in chat: „bin gleich zurück“.
+A1 | daily | status | informal | Gestern habe ich am Login gearbeitet. | Yesterday I worked on the login. | It's your turn in the daily: what did you do yesterday? | Daily structure: gestern, heute, Blocker.
+A1 | daily | status | informal | Heute mache ich die Tests fertig. | Today I'm finishing the tests. | In the daily you say what you'll do today. | „fertig machen“ = to finish (colloquial).
+A1 | daily | problem | informal | Ich habe ein Problem mit dem Server. | I have a problem with the server. | Something blocks your work and you mention it in the daily. | Then say what you need to continue.
+A1 | daily | request | informal | Kannst du mir kurz helfen? | Can you help me for a moment? | You're stuck and ask a teammate for help. | „kurz“ makes the request smaller and friendlier.
+A1 | daily | agree | informal | Alles klar, mache ich! | All right, I'll do it! | A colleague asks you to take over a small task. | Very common in teams. Formal: „In Ordnung, das übernehme ich.“
+A1 | daily | agree | neutral | Kein Problem. | No problem. | A colleague thanks you for a quick favour. | Neutral, fine with clients too.
+A1 | daily | status | neutral | Das Ticket ist fertig. | The ticket is done. | You finished your task and tell the team. | „fertig“ = done, ready.
+A1 | mail | email | formal | Sehr geehrte Frau Schmidt, | Dear Ms Schmidt, | You write to a client contact for the first time. | Most formal opening. For men: „Sehr geehrter Herr …“
+A1 | mail | email | neutral | Hallo Herr Weber, | Hello Mr Weber, | You write to a client you have worked with for a while. | Common business opening, less stiff than „Sehr geehrter“.
+A1 | mail | email | formal | Mit freundlichen Grüßen | Kind regards | You end a formal email to a client. | The standard formal closing.
+A1 | mail | email | neutral | Viele Grüße | Best regards | You end an email to a colleague or a client you know. | Friendly and safe in most business emails.
+A1 | mail | email | neutral | Vielen Dank für Ihre E-Mail. | Thank you for your email. | You start your reply to a client's email. | Classic first line of a reply.
+A1 | mail | request | formal | Bitte schicken Sie mir die Datei. | Please send me the file. | You need a document from the client. | Direct. „Könnten Sie mir … schicken?“ is softer.
+A1 | meeting | schedule | neutral | Wann haben Sie Zeit? | When do you have time? | You want to arrange a meeting with a client. | Then suggest concrete time slots.
+A1 | meeting | schedule | neutral | Am Montag um zehn Uhr passt gut. | Monday at ten works well. | You accept a meeting time someone proposed. | „passen“ = to suit, to work.
+A1 | meeting | schedule | neutral | Ich habe leider keine Zeit. | Unfortunately I don't have time. | You can't attend at the proposed time. | Add an alternative: „Geht auch Dienstag?“
+A1 | ops | problem | neutral | Das Programm funktioniert nicht. | The program doesn't work. | You report a problem to the support team. | Add details: what, when, which error message.
+A1 | ops | problem | neutral | Ich bekomme eine Fehlermeldung. | I get an error message. | You describe a bug in a support ticket. | „bekommen“ = to get, to receive.
+A1 | ops | request | formal | Haben Sie die Zugangsdaten für mich? | Do you have the login details for me? | You start at a client and still need your credentials. | „Zugangsdaten“ = login details, credentials.
+A1 | project | status | neutral | Wir sind fast fertig. | We're almost done. | The client asks how far along the work is. | Only say it when it's true!
+A1 | project | clarify | neutral | Bis wann brauchen Sie das? | By when do you need that? | A client asks for something without giving a deadline. | Always clarify the deadline.
+A1 | client | small | formal | Wie war Ihr Wochenende? | How was your weekend? | Monday morning, a few minutes before the meeting starts. | Classic small talk with clients.
+A1 | client | small | formal | Möchten Sie einen Kaffee? | Would you like a coffee? | A client visits your office. | Offer choices: „Kaffee, Tee oder Wasser?“
+A1 | client | close | formal | Vielen Dank für Ihre Zeit. | Thank you for your time. | You end a meeting with the client. | Polite closing for any meeting.
+A1 | client | close | neutral | Bis morgen! | See you tomorrow! | The call ends and you'll meet again tomorrow. | Also: „Bis später!“, „Bis Montag!“
+
+A2 | kickoff | greet | formal | Ich bin Ihre Ansprechpartnerin für alle technischen Fragen. | I'm your contact person for all technical questions. | At the kick-off you explain your role to the client. | „Ansprechpartner/in“ is a key business word.
+A2 | kickoff | greet | neutral | Ich arbeite seit drei Jahren als IT-Beraterin. | I've been working as an IT consultant for three years. | You describe your experience in an introduction round. | „seit + Dativ“ goes with the present tense.
+A2 | kickoff | small | informal | Wollen wir uns duzen? | Shall we use „du“? | A colleague at the client seems relaxed and you work together daily. | Usually the more senior person offers „du“. If unsure, wait.
+A2 | meeting | clarify | formal | Habe ich Sie richtig verstanden, dass die Daten täglich exportiert werden? | Did I understand correctly that the data is exported daily? | You want to check that you understood a requirement. | Repeat the point in your own words after „dass“.
+A2 | meeting | clarify | neutral | Ich habe noch eine Frage dazu. | I have one more question about that. | You want to ask a follow-up question. | „dazu“ = about that.
+A2 | meeting | schedule | formal | Passt Ihnen Dienstag um 14 Uhr? | Does Tuesday at 2 pm suit you? | You suggest a meeting time to a client. | „passen + Dativ“: Passt dir / Passt Ihnen …?
+A2 | meeting | schedule | neutral | Können wir den Termin verschieben? | Can we move the appointment? | Something urgent came up before a meeting. | Then suggest a new time.
+A2 | meeting | schedule | formal | Ich schicke Ihnen gleich eine Einladung. | I'll send you an invitation right away. | You agreed on a meeting time on the phone. | „Einladung“ = calendar invitation.
+A2 | meeting | schedule | neutral | Ich bin heute im Homeoffice. | I'm working from home today. | You tell the team where you're working today. | „im Homeoffice“ is the standard German expression.
+A2 | daily | status | informal | Ich bin noch nicht ganz fertig. | I'm not quite finished yet. | Someone asks if your task is done, but it isn't. | Add when: „… aber morgen bestimmt.“
+A2 | daily | problem | informal | Ich komme gerade nicht weiter. | I'm stuck right now. | You're blocked on a task and say so in the daily. | Perfect phrase for blockers.
+A2 | daily | request | informal | Hast du kurz Zeit für eine Frage? | Do you have a moment for a question? | You want to interrupt a busy colleague. | Respectful way to start a quick question.
+A2 | daily | agree | informal | Gute Idee, so machen wir das. | Good idea, let's do it that way. | A teammate suggests a solution you like. | Positive and decisive.
+A2 | daily | close | informal | Danke, das war's von mir. | Thanks, that's all from me. | You finish your update in the daily. | Signals that the next person can speak.
+A2 | daily | propose | informal | Lass uns das nach dem Daily klären. | Let's sort that out after the daily. | A long discussion starts during the daily. | Keeps the daily short. Formal: „Lassen Sie uns …“
+A2 | dev | request | informal | Kannst du dir meinen Pull Request anschauen? | Can you take a look at my pull request? | You need a code review from a colleague. | „sich etwas anschauen“ = to take a look at something.
+A2 | dev | status | informal | Ich habe den Fehler gefunden. | I've found the bug. | You finally found the cause of a bug. | Then explain the fix.
+A2 | dev | problem | neutral | Auf meinem Rechner funktioniert es. | It works on my machine. | A bug appears on the test system but not locally. | The classic developer sentence, best used with humour.
+A2 | mail | email | formal | Anbei sende ich Ihnen das Angebot. | Please find the offer attached. | You attach a document to an email. | „anbei“ = attached. Very common formula.
+A2 | mail | email | formal | Ich freue mich auf Ihre Antwort. | I look forward to your reply. | You end an email where you expect an answer. | Polite and positive last line.
+A2 | mail | email | formal | Bei Fragen melden Sie sich gern. | If you have any questions, feel free to get in touch. | You end an email after sending information. | „gern“ makes it friendly.
+A2 | mail | email | formal | Entschuldigen Sie bitte die späte Antwort. | Please excuse the late reply. | You reply to an email a week late. | Start with this, then answer.
+A2 | mail | email | neutral | Kurze Rückfrage zu Ihrer E-Mail: | Quick question about your email: | You need one detail clarified from an email. | Good subject line or first sentence.
+A2 | mail | request | formal | Könnten Sie mir bitte bis Freitag Bescheid geben? | Could you please let me know by Friday? | You need a decision from the client. | „Könnten“ (Konjunktiv II) makes it extra polite.
+A2 | ops | problem | neutral | Seit heute Morgen ist der Server nicht erreichbar. | The server has been unreachable since this morning. | You report an outage. | „seit + Dativ“ with the present tense.
+A2 | ops | status | formal | Wir arbeiten mit Hochdruck an einer Lösung. | We're working flat out on a solution. | The client asks about an ongoing outage. | Standard reassuring phrase during incidents.
+A2 | ops | status | neutral | Das Problem ist behoben. | The problem has been fixed. | The incident is resolved and you inform everyone. | „ist behoben“ describes the result.
+A2 | ops | request | formal | Können Sie mir einen Screenshot schicken? | Can you send me a screenshot? | A user reports a vague error. | Screenshots save a lot of time.
+A2 | ops | clarify | neutral | Seit wann tritt der Fehler auf? | Since when has the error been occurring? | You analyse a new bug report. | Key question in troubleshooting.
+A2 | project | status | neutral | Wir liegen gut im Zeitplan. | We're well on schedule. | The project manager asks about the timeline. | Opposite: „Wir sind im Verzug.“
+A2 | project | clarify | neutral | Wer ist dafür zuständig? | Who is responsible for that? | Nobody seems to own a task. | „zuständig für“ = responsible for.
+A2 | project | propose | neutral | Wir sollten das schriftlich festhalten. | We should put that in writing. | An important verbal agreement was just made. | Protects both sides later.
+A2 | client | agree | formal | Da haben Sie recht. | You're right about that. | The client makes a valid point. | Shows respect before you add your view.
+A2 | client | disagree | formal | Das sehe ich etwas anders. | I see that a bit differently. | You want to disagree with the client politely. | „etwas“ softens the disagreement.
+A2 | client | request | formal | Darf ich kurz etwas ergänzen? | May I add something briefly? | You want to add a point in a meeting. | Polite way to get the floor.
+A2 | client | close | formal | Ich melde mich morgen bei Ihnen. | I'll get back to you tomorrow. | You need time to check something before answering. | Promise it, and then keep it!
+A2 | workshop | clarify | formal | Wie läuft der Prozess heute ab? | How does the process work today? | You start analysing the client's current process. | „ablaufen“ = to run, to proceed.
+A2 | workshop | clarify | formal | Können Sie mir ein Beispiel nennen? | Can you give me an example? | A requirement sounds too abstract. | Examples make requirements concrete.
+A2 | workshop | propose | formal | Lassen Sie uns eine kurze Pause machen. | Let's take a short break. | The workshop has been running for two hours. | „Lassen Sie uns …“ = formal „let's“.
+
+B1 | meeting | status | formal | Wie ist der aktuelle Stand? | What's the current status? | You open a status meeting. | „der Stand“ = status. One of the most frequent questions.
+B1 | meeting | close | formal | Lassen Sie mich kurz zusammenfassen. | Let me briefly summarise. | The discussion is getting long and you want to wrap up. | Then: „Erstens … zweitens …“
+B1 | meeting | close | neutral | Was sind die nächsten Schritte? | What are the next steps? | The meeting is ending without clear tasks. | Always end with owners and dates.
+B1 | meeting | clarify | formal | Darauf komme ich gleich noch zurück. | I'll come back to that in a moment. | Someone asks a question you'll answer later in your presentation. | Keeps your presentation on track.
+B1 | meeting | disagree | formal | Da muss ich leider widersprechen. | I'm afraid I have to disagree there. | A wrong assumption is presented as a fact. | „leider“ softens it.
+B1 | meeting | agree | neutral | Das ist ein guter Punkt. | That's a good point. | Someone raises a valid concern. | Acknowledge before you answer.
+B1 | meeting | request | formal | Könnten wir das bilateral klären? | Could we clarify that one-on-one? | A detail is taking up the whole group's time. | „bilateral“ = between two people (business jargon).
+B1 | meeting | schedule | neutral | Ich muss leider zehn Minuten früher gehen. | Unfortunately I have to leave ten minutes early. | You have a conflicting appointment after the meeting. | Say it at the start, not at the end.
+B1 | workshop | clarify | formal | Was genau verstehen Sie unter Echtzeit? | What exactly do you mean by real time? | The client uses a vague word in a requirement. | Clarify fuzzy terms early.
+B1 | workshop | clarify | formal | Welche Anforderungen haben die höchste Priorität? | Which requirements have the highest priority? | You have to plan with a limited budget. | Leads to „Must-have“ vs. „Nice-to-have“.
+B1 | workshop | propose | formal | Ich würde vorschlagen, dass wir mit einem Prototyp starten. | I'd suggest we start with a prototype. | The requirements are still unclear. | „Ich würde vorschlagen …“ = diplomatic proposal.
+B1 | workshop | close | neutral | Halten wir fest: Das Feature kommt ins nächste Release. | Let's note: the feature goes into the next release. | You record a decision in the workshop. | „Halten wir fest“ marks a decision.
+B1 | workshop | clarify | formal | Gibt es dazu schon eine Dokumentation? | Is there already documentation on that? | You start analysing an existing system. | Ask before you reverse-engineer anything.
+B1 | daily | status | informal | Ich bin gerade an dem Bug mit dem Export dran. | I'm currently working on the export bug. | Daily update on your current task. | „an etwas dran sein“ = colloquial for working on something.
+B1 | daily | problem | informal | Mir fehlt noch der Zugriff auf die Datenbank. | I still don't have access to the database. | You name a blocker in the daily. | „mir fehlt“ = I'm missing.
+B1 | daily | request | informal | Kann das jemand übernehmen? | Can someone take this over? | You have too much on your plate. | Ask the team openly.
+B1 | dev | propose | informal | Wollen wir uns das zusammen anschauen? | Shall we look at it together? | A colleague has been struggling with a bug for hours. | Friendly offer for pair debugging.
+B1 | dev | disagree | informal | Ich bin mir nicht sicher, ob das so skaliert. | I'm not sure that scales. | You review a design you have doubts about. | Soft criticism: „Ich bin mir nicht sicher, ob …“
+B1 | dev | clarify | informal | Welche Version läuft gerade auf Produktion? | Which version is currently running in production? | You debug a production issue. | „auf Produktion“ = in production (team jargon).
+B1 | dev | status | informal | Die Änderung ist auf der Testumgebung deployt. | The change is deployed to the test environment. | You tell the tester the change is ready. | Denglisch „deployt“. In client documents: „bereitgestellt“.
+B1 | ops | problem | formal | Wir haben einen kritischen Fehler in der Produktion. | We have a critical error in production. | You alert the client about a severe incident. | Then: impact, workaround, time of next update.
+B1 | ops | status | formal | Wir melden uns in einer Stunde mit einem Update. | We'll get back to you in an hour with an update. | An incident is still ongoing. | Always promise when the next update comes.
+B1 | ops | clarify | neutral | Wie viele Nutzer sind betroffen? | How many users are affected? | You assess the impact of an incident. | „betroffen“ = affected.
+B1 | ops | propose | formal | Als Workaround können Sie den Export manuell starten. | As a workaround you can start the export manually. | Users need a temporary solution. | „Workaround“ is used in German too.
+B1 | project | problem | formal | Wir sind leider im Verzug. | Unfortunately we're behind schedule. | The project is late and you inform the client. | Then say why and what you'll do about it.
+B1 | project | status | formal | Das liegt im Rahmen des Budgets. | That's within the budget. | The client asks whether a change is affordable. | „im Rahmen“ = within.
+B1 | project | clarify | formal | Ist das im Projektumfang enthalten? | Is that included in the project scope? | The client asks for an extra feature. | Protects you from scope creep.
+B1 | project | propose | formal | Dafür bräuchten wir einen Change Request. | We'd need a change request for that. | The client asks for something outside the agreed scope. | „bräuchten“ = Konjunktiv II of brauchen.
+B1 | project | agree | neutral | Damit bin ich einverstanden. | I agree with that. | You accept a proposal in a planning meeting. | „einverstanden sein mit + Dativ“.
+B1 | client | propose | formal | Aus meiner Erfahrung empfehle ich eine Cloud-Lösung. | From my experience, I recommend a cloud solution. | The client asks for your recommendation. | Experience makes a recommendation credible.
+B1 | client | disagree | formal | Ich verstehe Ihren Punkt, allerdings sehe ich ein Risiko. | I understand your point, however I see a risk. | The client wants a risky shortcut. | Acknowledge first, then „allerdings“.
+B1 | client | request | formal | Wäre es möglich, die Frist zu verlängern? | Would it be possible to extend the deadline? | You need more time for a deliverable. | „Wäre es möglich …“ = very polite request.
+B1 | client | agree | formal | Das klingt nach einem guten Plan. | That sounds like a good plan. | The client proposes a reasonable plan. | Positive and natural.
+B1 | client | clarify | formal | Was ist Ihnen dabei besonders wichtig? | What matters most to you here? | You want to understand the client's priorities. | Open question that builds trust.
+B1 | mail | email | formal | Wie telefonisch besprochen, sende ich Ihnen die Unterlagen. | As discussed on the phone, I'm sending you the documents. | You write a follow-up email after a call. | „Wie besprochen“ links the email to the call.
+B1 | mail | email | formal | Ich beziehe mich auf Ihre Anfrage vom 3. Mai. | I'm referring to your request of 3 May. | You reply to an older request. | Formal reference line.
+B1 | mail | email | neutral | Ich bin bis einschließlich Freitag im Urlaub. | I'm on holiday up to and including Friday. | You set up your out-of-office reply. | Add a contact person for urgent matters.
+B1 | mail | request | formal | Ich wäre Ihnen dankbar, wenn Sie das prüfen könnten. | I'd be grateful if you could check that. | You ask a client for a favour in writing. | Very polite written request.
+B1 | kickoff | greet | formal | Kurz zu meiner Person: Ich bin seit zehn Jahren in der IT-Beratung. | A few words about me: I've been in IT consulting for ten years. | You introduce yourself at a kick-off. | „Kurz zu meiner Person“ opens a self-introduction.
+B1 | kickoff | clarify | formal | Welche Erwartungen haben Sie an das Projekt? | What expectations do you have of the project? | Kick-off with a new client. | „Erwartungen an + Akkusativ“.
+
+B2 | client | disagree | formal | Ich gebe zu bedenken, dass die Migration Risiken birgt. | I'd like to point out that the migration carries risks. | You raise a concern with management diplomatically. | Elegant, formal way to raise concerns.
+B2 | client | propose | formal | Aus unserer Sicht spricht vieles für eine schrittweise Einführung. | From our point of view, there's a strong case for a gradual rollout. | You recommend a strategy to the client. | „spricht vieles für“ = there's a lot in favour of.
+B2 | client | propose | formal | Wir empfehlen, zunächst einen Proof of Concept durchzuführen. | We recommend carrying out a proof of concept first. | The client wants to buy a tool right away. | „zunächst“ = first of all.
+B2 | client | disagree | formal | Das ist grundsätzlich möglich, allerdings mit Mehraufwand verbunden. | That's possible in principle, but it involves extra effort. | The client asks for an expensive change. | „grundsätzlich ja, aber …“ = a diplomatic no.
+B2 | client | agree | formal | Da stimme ich Ihnen voll und ganz zu. | I fully agree with you. | You strongly agree with the client. | „zustimmen + Dativ“.
+B2 | client | request | formal | Wir benötigen hierfür eine Entscheidung bis Ende der Woche. | We need a decision on this by the end of the week. | The project is blocked by a missing decision. | Clear but formal.
+B2 | client | close | formal | Wir nehmen das als offenen Punkt mit. | We'll take that as an open item. | A question can't be answered in the meeting. | „offener Punkt“ = open item.
+B2 | meeting | propose | formal | Lassen Sie uns das Thema parken und später darauf zurückkommen. | Let's park this topic and come back to it later. | A side discussion is taking too long. | „ein Thema parken“ = to park a topic.
+B2 | meeting | clarify | formal | Wenn ich kurz einhaken darf: Wie hoch ist das Budget? | If I may jump in briefly: how big is the budget? | You need to interrupt politely. | „einhaken“ = to jump in.
+B2 | meeting | disagree | formal | Ich möchte an dieser Stelle einen Einwand vorbringen. | I'd like to raise an objection at this point. | You formally object in a steering committee. | Very formal, for important objections.
+B2 | meeting | close | formal | Zusammenfassend lässt sich sagen, dass das Projekt im Plan liegt. | In summary, the project is on track. | You wrap up a status presentation. | Formal summary formula.
+B2 | meeting | problem | formal | Dieses Risiko sollten wir im Lenkungsausschuss eskalieren. | We should escalate this risk to the steering committee. | A risk exceeds what the team can decide. | „Lenkungsausschuss“ = steering committee.
+B2 | project | status | formal | Die Umsetzung erfolgt in drei Phasen. | The implementation takes place in three phases. | You present the project plan. | Nominal style („erfolgt“) is typical of written concepts.
+B2 | project | problem | formal | Durch die Verzögerung verschiebt sich der Go-Live um zwei Wochen. | Due to the delay, the go-live moves by two weeks. | You communicate a schedule change. | Cause with „durch + Akkusativ“.
+B2 | project | clarify | formal | Wer trägt die Verantwortung für die Datenqualität? | Who is responsible for data quality? | Ownership of a topic is unclear. | „die Verantwortung tragen für“.
+B2 | project | propose | formal | Um das Risiko zu minimieren, schlagen wir einen Parallelbetrieb vor. | To minimise the risk, we propose running both systems in parallel. | You plan a risky system cut-over. | „Um … zu“ + proposal.
+B2 | project | agree | formal | Darauf können wir uns gern verständigen. | We're happy to agree on that. | A negotiation reaches a compromise. | „sich verständigen auf“ = to agree on (formal).
+B2 | workshop | clarify | formal | Lässt sich dieser Sonderfall im Standard abbilden? | Can this special case be mapped in the standard system? | The client describes an unusual process. | Key question in software selection.
+B2 | workshop | propose | formal | Wir sollten die Fachabteilung frühzeitig einbinden. | We should involve the business department early on. | Users weren't part of the planning. | Stakeholder management.
+B2 | workshop | close | formal | Als Ergebnis des Workshops halten wir drei Handlungsfelder fest. | As a result of the workshop, we record three areas for action. | You close a workshop with the client. | „Handlungsfelder“ = areas for action.
+B2 | workshop | disagree | formal | Ich frage mich, ob der Aufwand den Nutzen rechtfertigt. | I wonder whether the effort justifies the benefit. | A feature seems too expensive for its value. | Indirect, diplomatic doubt.
+B2 | mail | email | formal | Anbei erhalten Sie die überarbeitete Version des Konzepts. | Attached is the revised version of the concept. | You send an updated document to the client. | „Anbei erhalten Sie …“ = formal attachment line.
+B2 | mail | email | formal | Für Rückfragen stehe ich Ihnen jederzeit gern zur Verfügung. | I'm always happy to answer any questions. | You close a formal email. | Classic German business formula.
+B2 | mail | email | formal | Ich darf Sie bitten, uns die Unterlagen bis Montag zukommen zu lassen. | May I ask you to send us the documents by Monday? | You make a very formal written request to a client. | „zukommen lassen“ = to send (formal).
+B2 | mail | problem | formal | Leider müssen wir Ihnen mitteilen, dass sich der Termin verschiebt. | Unfortunately we have to inform you that the date is being postponed. | You deliver bad news in writing. | Formal bad-news opening.
+B2 | ops | status | formal | Die Störung ist seit 14:30 Uhr behoben. | The disruption has been resolved since 2:30 pm. | You close an incident officially. | „Störung“ = disruption, outage.
+B2 | ops | problem | formal | Die Ursache des Ausfalls wird derzeit analysiert. | The cause of the outage is currently being analysed. | You give an incident update to management. | The passive keeps the focus on the issue.
+B2 | ops | propose | formal | Um ein erneutes Auftreten zu vermeiden, führen wir ein Monitoring ein. | To avoid a recurrence, we're introducing monitoring. | You present preventive measures in a post-mortem. | Typical sentence in a root-cause report.
+B2 | dev | disagree | neutral | Das ist technisch machbar, aber nicht wartbar. | That's technically feasible, but not maintainable. | Someone suggests a quick hack. | Clear technical argument.
+B2 | dev | propose | neutral | Wir sollten die technischen Schulden zeitnah abbauen. | We should reduce the technical debt soon. | Code quality keeps getting worse. | „technische Schulden“ = technical debt.
+B2 | kickoff | greet | formal | Ich übernehme die Projektleitung auf Auftragnehmerseite. | I'm taking on project management on the contractor side. | At the kick-off you introduce your role. | „Auftragnehmer“ = contractor, „Auftraggeber“ = client.
+B2 | kickoff | clarify | formal | Wie sind die Entscheidungswege bei Ihnen geregelt? | How are decisions made on your side? | You need to understand the client's governance. | Asking early saves weeks of waiting later.
+B2 | daily | problem | informal | Das ist ein Blocker für das ganze Team. | That's a blocker for the whole team. | A problem stops everyone's work. | Use it to get attention fast.
