@@ -43,6 +43,16 @@ function useTheme() {
 }
 
 export default function App() {
+  return (
+    <>
+      {/* registers the service worker (offline + updates) on every screen, including welcome and loading */}
+      <UpdateBanner />
+      <AppContent />
+    </>
+  )
+}
+
+function AppContent() {
   const [status, setStatus] = useState<'loading' | 'ready' | 'error'>(nouns().length && verbs().length && phrases().length ? 'ready' : 'loading')
   const [err, setErr] = useState('')
   const session = useUI((s) => s.session)
@@ -80,7 +90,6 @@ export default function App() {
 
   return (
     <>
-      <UpdateBanner />
       <Shell />
       <AnimatePresence>
         {session && (
