@@ -8,8 +8,60 @@ function ac(): AudioContext | null {
     if (!C) return null
     ctx = new C()
   }
-  if (ctx.state === 'suspended') void ctx.resume()
+  // iOS also uses an 'interrupted' state (e.g. after a phone call or switching apps)
+  if (ctx.state !== 'running') void ctx.resume().catch(() => {})
   return ctx
+}
+
+/**
+ * iPhone: Web Audio is muted by the silent switch and stays locked until the user taps.
+ * Speech synthesis is not affected, which is why only the machine voice used to play.
+ *  1. Unlock the audio context on the first tap/key press by playing a silent sample.
+ *  2. Use the "playback" audio session (Safari 17+) for recordings, so they play like speech
+ *     even when the phone is on silent.
+ */
+type AudioSessionNav = Navigator & { audioSession?: { type: string } }
+function setAudioSession(type: 'playback' | 'auto') {
+  try {
+    const session = (navigator as AudioSessionNav).audioSession
+    if (session && session.type !== type) session.type = type
+  } catch {
+    /* not supported */
+  }
+}
+
+if (typeof window !== 'undefined') {
+  const events = ['touchend', 'click', 'keydown'] as const
+  const unlock = () => {
+    const a = ac()
+    if (!a) return
+    try {
+      const silent = a.createBufferSource()
+      silent.buffer = a.createBuffer(1, 1, 22050)
+      silent.connect(a.destination)
+      silent.start(0)
+    } catch {
+      /* ignore */
+    }
+    void a
+      .resume()
+      .then(() => {
+        if (a.state === 'running') events.forEach((e) => window.removeEventListener(e, unlock, true))
+      })
+      .catch(() => {})
+  }
+  events.forEach((e) => window.addEventListener(e, unlock, true))
+}
+
+/** Resolve true once the audio context is actually running (or give up quickly). */
+async function ensureRunning(a: AudioContext): Promise<boolean> {
+  if (a.state === 'running') return true
+  try {
+    await Promise.race([a.resume(), new Promise((r) => setTimeout(r, 400))])
+  } catch {
+    /* ignore */
+  }
+  return (a.state as string) === 'running'
 }
 
 function tone(freq: number, start: number, dur: number, type: OscillatorType, gain = 0.18, slideTo?: number) {
@@ -205,14 +257,18 @@ function playSequence(bufs: AudioBuffer[], gap = 0.03) {
   const a = ac()
   if (!a) return
   let t = a.currentTime + 0.02
+  let last: AudioBufferSourceNode | null = null
   for (const b of bufs) {
     const src = a.createBufferSource()
     src.buffer = b
     src.connect(a.destination)
     src.start(t)
     playing.push(src)
+    last = src
     t += b.duration + gap
   }
+  // back to the default session so later UI sounds respect the silent switch again
+  if (last) last.onended = () => setAudioSession('auto')
 }
 
 const humanVoiceOn = () => useProgress.getState().settings.voice !== 'device'
@@ -239,12 +295,22 @@ export function sayNoun(n: { w: string; au?: string }, article?: string, form?: 
   stopHuman()
   window.speechSynthesis?.cancel()
   const my = token
+  setAudioSession('playback')
   const clips = [...(artPath ? [loadClip(artPath)] : []), loadClip(n.au)]
   Promise.all(clips)
-    .then((bufs) => {
+    .then(async (bufs) => {
+      if (my !== token) return
+      const a = ac()
+      // never stay silent: if the audio context can't start, use the device voice instead
+      if (!a || !(await ensureRunning(a))) {
+        setAudioSession('auto')
+        speak(text)
+        return
+      }
       if (my === token) playSequence(bufs)
     })
     .catch(() => {
+      setAudioSession('auto')
       if (my === token) speak(text)
     })
 }
