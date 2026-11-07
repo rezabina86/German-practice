@@ -35,14 +35,16 @@ Status legend: ☑ done · ☐ to do · **You** = your decision or action · **C
 
 ## 2. Publish — goes online, needs your OK (Claude)
 
-- ☐ **2.1 Push `main`** to `rezabina86/German-practice` (the repository already exists, public and empty).
-- ☐ **2.2 Turn on GitHub Pages** with source "GitHub Actions".
-- ☐ **2.3 Watch the first deploy.** If the Linux build server behaves differently from your Mac, fix it and push again.
-- ☐ **2.4 Smoke test the live site.** It loads; a lesson in each course works; native-speaker audio plays; after one visit it works offline; the address in the Settings install guide is right.
+- ☑ **2.1 Push `main`** to `rezabina86/German-practice` (the repository already exists, public and empty).
+- ☑ **2.2 Turn on GitHub Pages** with source "GitHub Actions".
+- ☑ **2.3 Watch the first deploy.** If the Linux build server behaves differently from your Mac, fix it and push again.
+- ☑ **2.4 Smoke test the live site.** It loads; a lesson in each course works; native-speaker audio plays; after one visit it works offline; the address in the Settings install guide is right.
 
 ---
 
 ## 3. Install on your iPhone (You, about 3 minutes)
+
+The app is live at **https://rezabina86.github.io/German-practice/**
 
 - ☐ **3.1 Back up your current progress.** In the app you've been using (e.g. the browser pane on your Mac): Settings → **Export**. Save or AirDrop the file to your iPhone, or put it in iCloud Drive.
 - ☐ **3.2 Install.** On the iPhone, open the address in **Safari** → **Share** → **Add to Home Screen**.
@@ -87,3 +89,4 @@ git push               # GitHub Actions publishes it
 - **iOS clean-up.** iOS may clear data of web apps that haven't been opened for weeks. The app asks for persistent storage, and regular use plus occasional backups cover the rest.
 - **Audio needs internet the first time.** Native-speaker recordings stream from Wikimedia Commons and are cached after the first play. Sentences use the phone's built-in voice, which works offline.
 - **Public repository** (if chosen in D2): the code and course content are visible to anyone; your progress never is.
+- **GitHub Actions housekeeping.** GitHub occasionally retires old versions of the build actions and shows warnings in the run log (e.g. "Node.js 20 is deprecated"). When that happens, update the version numbers in `.github/workflows/deploy.yml`, or ask Claude to.
