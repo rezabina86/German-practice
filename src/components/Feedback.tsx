@@ -1,4 +1,5 @@
 import { motion } from 'motion/react'
+import { useEffect, useRef } from 'react'
 import { Check, Lightbulb, Puzzle, TriangleAlert, Volume2, X } from 'lucide-react'
 import { ARTICLE, type Noun } from '../data/nouns'
 import { exampleParts, exampleText, type Verb } from '../data/verbs'
@@ -132,6 +133,16 @@ export function FeedbackSheet({ data, onContinue, seed }: { data: FeedbackData; 
     else if (say) speak(say)
   }
 
+  // Pronounce once, shortly after the sheet appears. (Not in onAnimationComplete: that also
+  // fires when the sheet slides out on "Continue", which made every word play twice.)
+  const playRef = useRef(play)
+  playRef.current = play
+  useEffect(() => {
+    if (!autoSpeak) return
+    const t = setTimeout(() => playRef.current(), 250)
+    return () => clearTimeout(t)
+  }, [autoSpeak])
+
   return (
     <motion.div
       initial={{ y: '100%' }}
@@ -139,9 +150,6 @@ export function FeedbackSheet({ data, onContinue, seed }: { data: FeedbackData; 
       exit={{ y: '100%' }}
       transition={{ type: 'spring', stiffness: 380, damping: 34 }}
       className={`fixed inset-x-0 bottom-0 z-40 border-t-2 ${correct ? 'border-ok/30 bg-ok-soft' : 'border-bad/30 bg-bad-soft'}`}
-      onAnimationComplete={() => {
-        if (autoSpeak) play()
-      }}
       role="status"
       aria-live="polite"
     >
