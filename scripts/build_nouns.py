@@ -16,15 +16,22 @@ start of a sentence gives a clean noun frequency and a "noun share" for each spe
 Final score = geometric mean of (subtitle freq x noun share) and (corpus noun freq).
 
 Usage:
-  python3 -I scripts/build_nouns.py NOUNS.jsonl FREQ.txt SENTENCES.txt public/data/nouns.json [--limit 12000]
+  python3 -I scripts/build_nouns.py NOUNS.jsonl FREQ.txt SENTENCES.txt public/data/nouns.json [--limit 12000] [--commons]
 
 Output: compact JSON {"v":1,"fields":[...],"rows":[[...], ...]} sorted by frequency.
+Recordings: `au` is the base form (best native recording, any speaker). `pa`, `ga` and `wa` are the
+Berlin speaker's clips of the plural, the genitive and the weak form (den/dem Menschen), coded
+relative to that form (see audio_clips.py). --commons looks up files not yet in the cache.
 Both sources are CC BY-SA; the output inherits that licence (see public/data/LICENSE.md).
 """
 import json
+import os
 import re
 import sys
 from collections import defaultdict
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import audio_clips  # noqa: E402
 
 BAD_SENSE_TAGS = {
     "form-of", "alt-of", "obsolete", "archaic", "dated", "vulgar",
@@ -199,6 +206,28 @@ def decl_form(entry, case):
     return None
 
 
+def genitives(entry):
+    """All genitive singular forms Wiktionary lists (des Systems / des Systemes), headword ones first."""
+    out = []
+    for fm in entry.get("forms", []):
+        tags = fm.get("tags", [])
+        if (not fm.get("source") and tags == ["genitive"]) or (
+                fm.get("source") == "declension" and "genitive" in tags and "singular" in tags):
+            for tok in fm["form"].split():
+                if tok not in ("des", "der", "eines", "einer") and tok not in out:
+                    out.append(tok)
+    return out
+
+
+def gen_form(r):
+    """The genitive the app shows (mirrors nounForm() in src/lib/cases.ts)."""
+    if r["gen"]:
+        return r["gen"].split(" ")[0]
+    if r["g"] == "f":
+        return r["w"]
+    return r["w"] + ("es" if re.search("[sßxz]$", r["w"]) else "s")
+
+
 def main():
     nouns_path, freq_path, sent_path, out_path = sys.argv[1:5]
     limit = 12000
@@ -300,7 +329,7 @@ def main():
                 "w": w, "g": g, "a": "".join(alts), "p": plural or "", "e": gloss, "e2": gloss2,
                 "s": score, "gen": gen if gen and gen != w else "", "acc": acc if acc and acc != w else "",
                 "dat": dat if dat and dat != w else "", "x": ex[0] if ex else "", "xe": ex[1] if ex else "",
-                "ns": len(senses), "df": derived_from, "au": pick_audio(e),
+                "ns": len(senses), "df": derived_from, "au": pick_audio(e), "gens": genitives(e),
             }
             key = (w, g)
             old = cands.get(key)
@@ -352,7 +381,27 @@ def main():
     rows.sort(key=lambda r: (-r["s"], r["w"]))
     rows = rows[:limit]
 
-    fields = ["w", "g", "a", "h", "p", "e", "e2", "gen", "acc", "dat", "x", "xe", "au"]
+    # Native recordings of the inflected forms, by the speaker who recorded der/die/das.
+    # When Wiktionary lists two genitives (Systems / Systemes), teach the one with a recording.
+    clips = audio_clips.Clips([nouns_path])
+    weak = lambda r: (r["acc"] or r["dat"]).split(" ")[0]
+    audio_clips.resolve(clips, sorted({x for r in rows for x in [r["p"], weak(r), *r["gens"], gen_form(r)] if x}))
+    switched = 0
+    for r in rows:
+        if r["gen"] and not clips.name(r["gen"]):
+            alt = next((x for x in r["gens"] if x != r["w"] and clips.name(x)), None)
+            if alt:
+                r["gen"] = alt
+                switched += 1
+        r["pa"] = clips.code(r["p"]) if r["p"] and r["p"] != "-" else ""
+        r["ga"] = clips.code(gen_form(r)) if r["g"] in "mn" else ""
+        r["wa"] = clips.code(weak(r)) if weak(r) else ""
+    has = lambda k: sum(1 for r in rows if r[k])
+    print(f"form recordings: plural {has('pa')}/{sum(1 for r in rows if r['p'] and r['p'] != '-')}, "
+          f"genitive {has('ga')}/{sum(1 for r in rows if r['g'] in 'mn')} ({switched} switched to the recorded variant), "
+          f"weak {has('wa')}/{sum(1 for r in rows if weak(r))}")
+
+    fields = ["w", "g", "a", "h", "p", "e", "e2", "gen", "acc", "dat", "x", "xe", "au", "pa", "ga", "wa"]
     out = {
         "v": 1,
         "source": "Wiktionary (wiktextract/kaikki.org), OpenSubtitles frequency (hermitdave/FrequencyWords), Leipzig Corpora Collection deu_mixed-typical_2011_1M; CC BY-SA",

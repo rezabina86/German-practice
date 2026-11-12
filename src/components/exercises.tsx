@@ -2,7 +2,8 @@ import { AnimatePresence, motion } from 'motion/react'
 import { Sparkles, Volume2, RotateCcw } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { ARTICLE, GENDERS, isCorrectGender, type Gender, type Noun } from '../data/nouns'
-import { preloadNoun, sayNoun, sfx } from '../lib/audio'
+import { preload, preloadNoun, sayNoun, sfx } from '../lib/audio'
+import { nounUtterance } from '../lib/voice'
 import { CASE_NAME, caseSentence } from '../lib/cases'
 import type { Exercise } from '../lib/session'
 import { useProgress } from '../store/progress'
@@ -79,7 +80,7 @@ export function ChooseView({ ex, locked, onResult, quick }: Props<Extract<Exerci
         correct,
         noun,
         answer: { article: ARTICLE[noun.g], word: noun.w, g: noun.g },
-        voice: { noun, article: ARTICLE[noun.g] },
+        voice: nounUtterance(noun, ARTICLE[noun.g]),
         altNote: alt ? `${ARTICLE[g]} ${noun.w} is accepted too, but ${ARTICLE[noun.g]} ${noun.w} is standard.` : undefined,
       },
       retry: correct ? undefined : [{ id: retryId(), kind: 'choose', noun, isNew: false, retry: true }],
@@ -304,7 +305,7 @@ export function OddOneView({ ex, locked, onResult }: Props<Extract<Exercise, { k
       feedback: {
         correct,
         answer: { article: ARTICLE[odd.g], word: odd.w, g: odd.g },
-        voice: { noun: odd, article: ARTICLE[odd.g] },
+        voice: nounUtterance(odd, ARTICLE[odd.g]),
         note: `The others all take ${ARTICLE[groupG]}.`,
         noun: correct ? undefined : odd,
       },
@@ -361,6 +362,7 @@ export function CaseView({ ex, locked, onResult }: Props<Extract<Exercise, { kin
   const showGloss = useProgress((s) => s.settings.showGloss)
   const cap = item.before.trim() === ''
   const fmt = (a: string) => (cap ? a[0].toUpperCase() + a.slice(1) : a)
+  useEffect(() => preload(nounUtterance(item.noun, item.answer, item.form)), [item])
 
   const choose = (o: string) => {
     if (locked || picked) return
@@ -373,7 +375,8 @@ export function CaseView({ ex, locked, onResult }: Props<Extract<Exercise, { kin
       feedback: {
         correct,
         sentence: caseSentence(item, item.answer),
-        voice: item.form === n.w ? { noun: n, article: item.answer } : undefined,
+        // the noun phrase in the speaker's voice ("des Mannes"); the sentence is only shown
+        voice: nounUtterance(n, item.answer, item.form),
         answer: { article: fmt(item.answer), word: `${item.form}${item.after}`.trim(), g: n.g },
         note:
           item.c === 'nom'

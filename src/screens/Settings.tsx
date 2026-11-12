@@ -74,7 +74,7 @@ export function SettingsScreen() {
         <Toggle label="Show English meaning" desc="Helps tell homographs apart (der See vs. die See)." on={settings.showGloss} onChange={(v) => set({ showGloss: v })} />
       </Group>
 
-      <Group title="Voice" desc="Native speakers recorded almost every word. Sentences use your device’s voice.">
+      <Group title="Voice" desc="Native speakers recorded almost every word and form (die Zeiten, er hat umgesetzt). Sentences use your device’s voice.">
         <div className="grid gap-2 sm:grid-cols-2">
           {(
             [

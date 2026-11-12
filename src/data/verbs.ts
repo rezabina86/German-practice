@@ -48,16 +48,24 @@ export interface Verb {
   pres: string[]
   pret: string[]
   k2: string[]
+  /** infinitive recording (Wikimedia Commons path, any native speaker) */
   au: string
+  /** every word of every form → the Berlin speaker's clip, coded as in lib/audio.ts clipPath() */
+  fa: Record<string, string>
   modal: boolean
 }
 
 // Kept on globalThis so a second copy of this module (dev hot reload) shares the loaded data.
-const G = globalThis as unknown as { __seedlangVerbs?: Verb[] }
+const G = globalThis as unknown as { __seedlangVerbs?: Verb[]; __seedlangVerbClips?: Record<string, string> }
 let loading: Promise<Verb[]> | null = null
 
 export function verbs(): Verb[] {
   return G.__seedlangVerbs ?? []
+}
+
+/** Recordings of the words said with verb forms: pronouns, reflexives, haben/sein, würde, wird. */
+export function verbHelperClips(): Record<string, string> {
+  return G.__seedlangVerbClips ?? {}
 }
 
 export function loadVerbs(): Promise<Verb[]> {
@@ -66,12 +74,13 @@ export function loadVerbs(): Promise<Verb[]> {
   loading = fetch(`${import.meta.env.BASE_URL}data/verbs.json`)
     .then((r) => {
       if (!r.ok) throw new Error(`Failed to load verbs (${r.status})`)
-      return r.json() as Promise<{ verbs: Omit<Verb, 'id' | 'key' | 'lemma' | 'modal'>[] }>
+      return r.json() as Promise<{ clips?: Record<string, string>; verbs: Omit<Verb, 'id' | 'key' | 'lemma' | 'modal'>[] }>
     })
     .then((d) => {
+      G.__seedlangVerbClips = d.clips ?? {}
       G.__seedlangVerbs = d.verbs.map((v, i) => {
         const lemma = v.inf.replace(/^sich /, '')
-        return { ...v, id: i, key: `v:${v.inf}`, lemma, modal: MODALS.has(lemma) }
+        return { ...v, fa: v.fa ?? {}, id: i, key: `v:${v.inf}`, lemma, modal: MODALS.has(lemma) }
       })
       return G.__seedlangVerbs
     })

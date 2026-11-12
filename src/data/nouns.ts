@@ -25,6 +25,11 @@ export interface Noun {
   xe: string
   /** Wikimedia Commons recording, e.g. "e7/De-Zeit.ogg" ('' if none). */
   au: string
+  /** Berlin speaker's recordings of the plural, the genitive and the weak form (den Menschen),
+   *  coded relative to that form (lib/audio.ts clipPath), '' if none. */
+  pa: string
+  ga: string
+  wa: string
   /** 0-based frequency rank. */
   rank: number
 }
@@ -78,6 +83,9 @@ export function loadNouns(): Promise<Noun[]> {
           x: r[ix.x],
           xe: r[ix.xe],
           au: ix.au !== undefined ? r[ix.au] : '',
+          pa: ix.pa !== undefined ? r[ix.pa] : '',
+          ga: ix.ga !== undefined ? r[ix.ga] : '',
+          wa: ix.wa !== undefined ? r[ix.wa] : '',
           rank: i,
         }
       })

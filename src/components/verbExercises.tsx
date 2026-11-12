@@ -3,10 +3,12 @@ import { BookOpen, Lightbulb, Sparkles, Volume2 } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { ARTICLE, GENDERS } from '../data/nouns'
 import { SITUATIONS, exampleParts, exampleText, perfekt, withRefl, type Verb } from '../data/verbs'
-import { preloadNoun, sayNoun, speak } from '../lib/audio'
+import { preload, say, speak } from '../lib/audio'
+import { verbBase, verbUtterance } from '../lib/voice'
 import { SKILL_LABEL, type VChoice, type VIntro } from '../lib/verbSession'
 import { useProgress } from '../store/progress'
 import type { ExerciseResult } from './exercises'
+import { Speaker } from './Speaker'
 import { Button, Kbd, genderVariant } from './ui'
 
 const LEVEL_COLOR: Record<string, string> = { A1: 'var(--brand)', A2: 'var(--der)', B1: 'var(--das)', B2: 'var(--flame)' }
@@ -23,7 +25,9 @@ export function SituationChip({ sit }: { sit: Verb['sit'] }) {
   return <span className="rounded-lg bg-surface-2 px-2 py-0.5 text-xs font-black text-muted">{SITUATIONS[sit].en}</span>
 }
 
-const sayVerb = (v: Verb) => sayNoun({ w: v.lemma, au: v.au })
+const sayVerb = (v: Verb) => void say(verbBase(v))
+/** What a drill pronounces: its answer phrase ("er hat umgesetzt"), or the infinitive. */
+const drillVoice = (ex: VChoice) => (ex.say ? verbUtterance(ex.verb, ex.say) : verbBase(ex.verb))
 
 function useKeys(handler: (e: KeyboardEvent) => void, active: boolean) {
   const ref = useRef(handler)
@@ -44,16 +48,19 @@ function useKeys(handler: (e: KeyboardEvent) => void, active: boolean) {
 /** The forms worth memorising, e.g. "er setzt um · setzte um · hat umgesetzt". */
 export function KeyForms({ v }: { v: Verb }) {
   const items = [
-    { label: 'er/sie/es', form: withRefl(v, v.pres[2], 2) },
-    v.pret[2] && !v.modal ? { label: 'Präteritum', form: v.pret[2] } : null,
-    v.pp ? { label: 'Perfekt', form: perfekt(v) } : null,
-  ].filter(Boolean) as { label: string; form: string }[]
+    { label: 'er/sie/es', form: withRefl(v, v.pres[2], 2), say: `er ${withRefl(v, v.pres[2], 2)}` },
+    v.pret[2] && !v.modal ? { label: 'Präteritum', form: v.pret[2], say: `er ${withRefl(v, v.pret[2], 2)}` } : null,
+    v.pp ? { label: 'Perfekt', form: perfekt(v), say: `er ${perfekt(v)}` } : null,
+  ].filter(Boolean) as { label: string; form: string; say: string }[]
   return (
     <div className="grid grid-cols-3 gap-2">
       {items.map((i) => (
         <div key={i.label} className="rounded-xl border-2 border-line px-2 py-2 text-center">
           <div className="text-[11px] font-black tracking-wider text-muted uppercase">{i.label}</div>
-          <div className="mt-0.5 font-black">{i.form}</div>
+          <div className="mt-0.5 font-black">
+            {i.form}
+            <Speaker u={verbUtterance(v, i.say)} size="sm" label={`Hear ${i.say}`} caption={false} />
+          </div>
         </div>
       ))}
     </div>
@@ -163,8 +170,8 @@ export function VChoiceView({ ex, locked, onResult }: { ex: VChoice; locked: boo
   const [picked, setPicked] = useState<string | null>(null)
   useEffect(() => {
     t0.current = performance.now()
-    preloadNoun({ au: v.au })
-  }, [v])
+    preload(drillVoice(ex))
+  }, [v, ex])
 
   const choose = (o: string) => {
     if (locked || picked) return
@@ -173,7 +180,7 @@ export function VChoiceView({ ex, locked, onResult }: { ex: VChoice; locked: boo
     markKey(v.key, correct, performance.now() - t0.current)
     onResult({
       correct,
-      feedback: { correct, solution: ex.solution, note: ex.explain === v.note ? undefined : ex.explain, verb: v, voice: { noun: { w: v.lemma, au: v.au } } },
+      feedback: { correct, solution: ex.solution, note: ex.explain === v.note ? undefined : ex.explain, verb: v, voice: drillVoice(ex) },
       retry: correct ? undefined : [{ ...ex, id: `${ex.id}r${Date.now()}`, retry: true }],
       missedVerbs: correct ? undefined : [v],
     })

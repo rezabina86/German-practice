@@ -2,6 +2,7 @@ import { ARTICLE } from '../data/nouns'
 import { LEVELS, PRONOUNS, REFL, SITUATIONS, exampleParts, prepositions, verbs, withRefl, type Level, type SituationId, type Verb } from '../data/verbs'
 import { useProgress } from '../store/progress'
 import { isDue, retrievability } from './srs'
+import { SPOKEN_PRONOUN } from './voice'
 
 export type VSkill = 'meaning' | 'meaningRev' | 'context' | 'pres' | 'aux' | 'pp' | 'pret' | 'k2' | 'prep' | 'noun' | 'passive'
 
@@ -38,6 +39,8 @@ export interface VChoice {
   answer: string
   /** full answer phrase shown in feedback, e.g. "du setzt um" */
   solution: string
+  /** the phrase to pronounce with recordings (grammar drills), e.g. "er setzt um"; else the infinitive */
+  say?: string
   explain: string
   retry?: boolean
 }
@@ -161,6 +164,7 @@ export function makeDrill(v: Verb, skill: VSkill): VChoice {
         options: opts(ans, ds),
         answer: ans,
         solution: `${P(p)} ${ans}`,
+        say: `${SPOKEN_PRONOUN[p]} ${ans}`,
         explain:
           skill === 'pret'
             ? 'The Präteritum is used in written reports and for sein, haben and modal verbs when speaking.'
@@ -189,6 +193,7 @@ export function makeDrill(v: Verb, skill: VSkill): VChoice {
         options: opts(ans, ds),
         answer: ans,
         solution: `${pron} ${ans}`,
+        say: `${pron} ${ans}`,
         explain: synthetic
           ? `„${v.k2[5][0].toUpperCase()}${v.k2[5].slice(1)} Sie …?“ is the polite form. Only sein, haben, werden, wissen and the modal verbs have their own Konjunktiv II.`
           : 'Most verbs form Konjunktiv II with „würde + Infinitiv“. It softens statements: „Ich würde vorschlagen …“ sounds more diplomatic than „Ich schlage vor …“.',
@@ -204,6 +209,7 @@ export function makeDrill(v: Verb, skill: VSkill): VChoice {
         options: ['hat', 'ist'],
         answer: isSein ? 'ist' : 'hat',
         solution: `er ${isSein ? 'ist' : 'hat'}${v.refl ? ' sich' : ''} ${v.pp}`,
+        say: `er ${isSein ? 'ist' : 'hat'}${v.refl ? ' sich' : ''} ${v.pp}`,
         explain: isSein
           ? `${v.lemma} takes sein: it describes movement or a change of state (kommen, abstürzen, ausfallen).`
           : 'Most verbs, and all verbs with a direct object, take haben.',
@@ -219,6 +225,7 @@ export function makeDrill(v: Verb, skill: VSkill): VChoice {
         options: opts(v.pp, v.ppx),
         answer: v.pp,
         solution: `ich ${aux}${v.refl ? ' mich' : ''} ${v.pp}`,
+        say: `ich ${aux}${v.refl ? ' mich' : ''} ${v.pp}`,
         explain: /^(be|ge|er|ver|zer|ent|emp|miss|über|hinter)/.test(v.lemma) && !v.sep
           ? 'Inseparable prefix (be-, ver-, er-, über- …): no „ge-“ in the Partizip II.'
           : v.lemma.endsWith('ieren')
@@ -238,6 +245,7 @@ export function makeDrill(v: Verb, skill: VSkill): VChoice {
         options: opts(ans, [`hat ${v.pp}`, `wird ${v.lemma}`, `wurde ${v.pp}`, `ist ${v.lemma}`]),
         answer: ans,
         solution: `Es ${ans}.`,
+        say: `es ${ans}`,
         explain: 'Passive = werden + Partizip II. In reports and documentation the passive keeps the focus on the task: „Das Feature wird morgen ausgerollt.“',
       }
     }

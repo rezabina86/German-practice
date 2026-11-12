@@ -6,7 +6,9 @@ import { exampleParts, exampleText, type Verb } from '../data/verbs'
 import type { Phrase } from '../data/phrases'
 import { PhraseCard } from './phraseExercises'
 import { hintFor } from '../lib/rules'
-import { sayNoun, speak } from '../lib/audio'
+import { say as sayUtterance, speak, type Utterance } from '../lib/audio'
+import { nounUtterance } from '../lib/voice'
+import { Speaker } from './Speaker'
 import { Button, Kbd, genderText } from './ui'
 import { useProgress } from '../store/progress'
 
@@ -22,8 +24,8 @@ export interface FeedbackData {
   sentence?: string
   /** accepted, but a different article is standard */
   altNote?: string
-  /** what to pronounce: a noun with its article, in a native speaker's voice */
-  voice?: { noun: { w: string; au?: string }; article?: string; form?: string }
+  /** what to pronounce in a native speaker's voice: "die Zeit", "des Mannes", "er hat umgesetzt" */
+  voice?: Utterance
   /** verb drills: the full correct phrase and the verb to explain */
   solution?: string
   verb?: Verb
@@ -76,6 +78,9 @@ export function NounDetails({ noun, compact = false }: { noun: Noun; compact?: b
           <span>
             <span className="text-muted">Plural </span>
             <span className="text-die">die</span> {noun.p}
+            <span className="ml-0.5">
+              <Speaker u={nounUtterance(noun, 'die', noun.p)} size="sm" label={`Hear die ${noun.p}`} />
+            </span>
           </span>
         )}
       </div>
@@ -129,7 +134,7 @@ export function FeedbackSheet({ data, onContinue, seed }: { data: FeedbackData; 
   const say = data.sentence ?? (answer ? `${answer.article} ${answer.word}` : '')
   const play = () => {
     if (data.speakText) speak(data.speakText)
-    else if (data.voice) sayNoun(data.voice.noun, data.voice.article, data.voice.form)
+    else if (data.voice) void sayUtterance(data.voice)
     else if (say) speak(say)
   }
 
@@ -172,7 +177,9 @@ export function FeedbackSheet({ data, onContinue, seed }: { data: FeedbackData; 
                   <span>
                     <span className={genderText[answer.g]}>{answer.article}</span> {answer.word}
                   </span>
-                  {(say || data.voice || data.speakText) && (
+                  {data.voice && !data.speakText ? (
+                    <Speaker u={data.voice} label={`Hear „${data.voice.text}“`} />
+                  ) : (say || data.speakText) && (
                     <button
                       onClick={play}
                       className="rounded-full p-1.5 text-muted hover:bg-black/5 dark:hover:bg-white/10"
@@ -190,6 +197,11 @@ export function FeedbackSheet({ data, onContinue, seed }: { data: FeedbackData; 
             <div className="mt-1 text-xl font-black">
               {!correct && <span className="mr-2 text-sm font-bold text-bad-text">Correct answer:</span>}
               {data.solution}
+              {data.voice && !answer && (
+                <span className="ml-1 text-base">
+                  <Speaker u={data.voice} label={`Hear „${data.voice.text}“`} />
+                </span>
+              )}
             </div>
           )}
           {data.note && <p className="mt-2 text-[15px] font-bold text-ink/80">{data.note}</p>}

@@ -28,7 +28,7 @@ Mistakes come back at the end of the lesson, as Duolingo does.
 **Feedback that teaches.** After each answer you get:
 - the meaning and plural
 - an example sentence (when Wiktionary has one)
-- pronunciation by a **native speaker**: real Wikimedia Commons recordings for 11,856 of the 12,000 words, mostly by one Berlin speaker who also recorded der/die/das. The article and noun clips are trimmed and joined into one phrase ("die … Zeit"). Sentences, and words without a recording, use the device's best German voice.
+- pronunciation by a **native speaker**: real Wikimedia Commons recordings for 11,856 of the 12,000 words, mostly by one Berlin speaker who also recorded der/die/das. The article and noun clips are trimmed and joined into one phrase ("die … Zeit"). The same speaker recorded the inflected forms too, so plurals, genitives and weak nouns are said the same way ("die Zeiten", "des Mannes", "den Menschen"; 94–97 % of them have a recording). Sentences, and base words without a recording, use the device's best German voice; an inflected form never does: without a recording you hear the base form, labelled as such.
 - the most useful hint:
   - **Compound rule:** `Haus + die Tür → die Haustür`. Found automatically for about 4,500 words.
   - **Suffix or group rule** with its *measured* reliability, e.g. `-ung → die (99% of 1,200 words)`.
@@ -52,7 +52,7 @@ Mistakes come back at the end of the lesson, as Duolingo does.
 On the Learn tab, switch between **Artikel** and **Verben**.
 
 - **218 hand-picked verbs** for consulting work: from *arbeiten* and *schicken* (A1) to *gewährleisten* and *priorisieren* (B2). They are grouped into nine work situations: kick-off, daily, emails, meetings, requirements workshops, development, operations/incidents, project management and client consulting.
-- **Each verb has:** a real IT example sentence with translation, a "when to use it" note (register, typical phrases, loanwords like *deployen* vs. formal *bereitstellen*), its case or preposition, the related noun (*die Umsetzung*), and a native-speaker recording.
+- **Each verb has:** a real IT example sentence with translation, a "when to use it" note (register, typical phrases, loanwords like *deployen* vs. formal *bereitstellen*), its case or preposition, the related noun (*die Umsetzung*), and a native-speaker recording. Drill answers are spoken in the same voice, stitched from that speaker's recordings of each word: "ich setze um", "er hat umgesetzt", "Sie würden prüfen" (98.7 % of the words in all forms are recorded).
 - **Grammar grows with the level:**
   - A1: meaning, in-context use, present tense
   - A2: + Perfekt (*haben* or *sein*?, participle)
@@ -67,6 +67,8 @@ The verb list lives in `scripts/verbs_it.txt` (one line per verb). `scripts/buil
 ```bash
 python3 -I scripts/build_verbs.py kaikki.org-dictionary-German-by-pos-verb.jsonl public/data/nouns.json public/data/verbs.json [goethe-dir] [nouns.jsonl]
 ```
+
+Recordings of inflected forms are found by `scripts/audio_clips.py` (shared by both build scripts). Which Commons files belong to the Berlin speaker is cached in `scripts/commons_jeuwre.json`, so rebuilds run offline; add `--commons` to `npm run data:nouns -- --commons` or `data:verbs` to look up files that are not in the cache yet. See [docs/native-voice-forms.md](docs/native-voice-forms.md).
 
 ## Phrase course (consulting phrases, A1–B2)
 

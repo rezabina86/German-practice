@@ -7,11 +7,16 @@ scripts/verbs_it.txt (IT-consulting vocabulary). Every conjugated form comes fro
 an example sentence is checked against those tables.
 
 Usage:
-  python3 -I scripts/build_verbs.py VERBS.jsonl public/data/nouns.json public/data/verbs.json [GOETHE_DIR] [NOUNS.jsonl]
+  python3 -I scripts/build_verbs.py VERBS.jsonl public/data/nouns.json public/data/verbs.json [GOETHE_DIR] [NOUNS.jsonl] [--commons]
 
   VERBS.jsonl : https://kaikki.org/dictionary/German/pos-verb/kaikki.org-dictionary-German-by-pos-verb.jsonl
   GOETHE_DIR  : optional, TSV files from github.com/ilkermeliksitki/goethe-institute-wordlist
                 (a1-*.tsv, a2-*.tsv, b1-*.tsv), only used to print a level cross-check.
+  --commons   : look up recordings not yet in scripts/commons_jeuwre.json on Wikimedia Commons.
+
+Recordings: `au` is the infinitive (best native recording, any speaker). `fa` maps every word of
+every form to the Berlin speaker's clip ({"setzt": "90", "um": "…"}, codes as in audio_clips.py),
+and the top-level `clips` holds pronouns and auxiliaries, so the app can say "er hat umgesetzt".
 """
 import json
 import os
@@ -19,12 +24,18 @@ import re
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+import audio_clips  # noqa: E402
 PERSONS = [("first-person", "singular"), ("second-person", "singular"), ("third-person", "singular"),
            ("first-person", "plural"), ("second-person", "plural"), ("third-person", "plural")]
 LEVELS = ["A1", "A2", "B1", "B2"]
 SITUATIONS = {"kickoff", "daily", "mail", "meeting", "workshop", "dev", "ops", "project", "client"}
 # Verbs that take haben OR sein depending on meaning: the auxiliary for the sense taught here.
 AUX_FOR_SENSE = {"bekommen": "haben", "starten": "haben", "hängen": "haben", "eskalieren": "haben", "herunterbrechen": "haben"}
+# Words the app stitches in front of verb forms: pronouns, reflexives, auxiliaries, würde.
+HELPER_WORDS = ["ich", "du", "er", "sie", "es", "wir", "ihr", "Sie", "mich", "dich", "sich", "uns", "euch",
+                "habe", "hast", "hat", "haben", "habt", "bin", "bist", "ist", "sind", "seid",
+                "würde", "würdest", "würden", "würdet", "wird"]
 INSEPARABLE = ("be", "ge", "er", "ver", "zer", "ent", "emp", "miss", "hinter", "über", "unter", "wider")
 
 
@@ -165,9 +176,10 @@ def goethe_levels(d):
 
 
 def main():
-    verbs_path, nouns_path, out_path = sys.argv[1:4]
-    goethe_dir = sys.argv[4] if len(sys.argv) > 4 else None
-    raw_nouns = sys.argv[5] if len(sys.argv) > 5 else None
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    verbs_path, nouns_path, out_path = args[:3]
+    goethe_dir = args[3] if len(args) > 3 else None
+    raw_nouns = args[4] if len(args) > 4 else None
     src = read_source(os.path.join(HERE, "verbs_it.txt"))
     dupes = {v["inf"] for v in src if [x["inf"] for x in src].count(v["inf"]) > 1}
     assert not dupes, dupes
@@ -271,8 +283,31 @@ def main():
             "goethe": g or "",
         })
 
+    # native recordings of every inflected form (same Berlin speaker as the pronouns and auxiliaries)
+    clips = audio_clips.Clips([verbs_path])
+    tokens = lambda v: {t for f in [v["inf"].replace("sich ", "")] + v["pres"] + v["pret"] + v["k2"] + [v["pp"]] for t in (f or "").split()}
+    audio_clips.resolve(clips, HELPER_WORDS + sorted({t for v in out for t in tokens(v)}))
+    helpers = {w: clips.path(w) for w in HELPER_WORDS}
+    missing_helpers = [w for w, p in helpers.items() if not p]
+    if missing_helpers:
+        problems.append(f"no recording for helper words {missing_helpers}")
+    n_tok = n_hit = 0
+    for v in out:
+        fa = {}
+        for t in sorted(tokens(v)):
+            c = clips.code(t)
+            n_tok += 1
+            if c:
+                fa[t] = c
+                n_hit += 1
+        v["fa"] = fa
+    print(f"form recordings: {n_hit}/{n_tok} words ({100 * n_hit / max(1, n_tok):.1f} %)",
+          "· missing:", " ".join(sorted({t for v in out for t in tokens(v) if t not in v["fa"]})))
+
     with open(out_path, "w", encoding="utf-8") as f:
-        json.dump({"v": 1, "source": "Curated IT-consulting list; conjugations from Wiktionary (kaikki.org), CC BY-SA", "verbs": out},
+        json.dump({"v": 1, "source": "Curated IT-consulting list; conjugations from Wiktionary (kaikki.org), CC BY-SA; "
+                   "recordings: Wikimedia Commons (Jeuwre and others), CC BY-SA",
+                   "clips": helpers, "verbs": out},
                   f, ensure_ascii=False, separators=(",", ":"))
     from collections import Counter
     print("verbs written:", len(out), Counter(v["lvl"] for v in out), "audio:", sum(1 for v in out if v["au"]))
